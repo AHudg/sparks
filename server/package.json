@@ -1,0 +1,16 @@
+{
+  "name": "sparksserver",
+  "version": "1.0.0",
+  "description": "server side of sparks application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seeds.js"
+  },
+  "author": "Key VI Designs",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
