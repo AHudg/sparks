@@ -3,7 +3,7 @@ import React from "react";
 function Landing() {
   return (
     <main>
-      <p>Landing</p>
+      <a href="/about">Go to the About</a>
     </main>
   );
 }
