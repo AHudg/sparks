@@ -1,6 +1,7 @@
 @import-normalize;
 
 :root {
+  font-size: 16px;
 }
 
 body {
@@ -10,9 +11,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: antiquewhite;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.homeLogo {
+  width: 5vw;
+  margin: 1rem 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
 }
