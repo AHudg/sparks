@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import homeLogo from "../../homeLogo.png";
 
 export default function Header() {
-  const [isMobile, setIsMobile] = useState(true);
+  const [mobile, setMobile] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setIsMobile(true);
-
-        console.log("mobile");
+        setMobile(true);
       } else {
-        setIsMobile(false);
-        console.log("laptop");
+        setMobile(false);
       }
     };
     window.addEventListener("resize", handleResize);
@@ -23,10 +20,19 @@ export default function Header() {
   }, []);
 
   return (
-    <header>
+    <header className="">
       <a href="/">
         <img src={homeLogo} className="homeLogo"></img>
       </a>
+      {mobile === true ? (
+        <div>
+          <span className="topHamburger"></span>
+          <span className="middleHamburger"></span>
+          <span className="bottomHamburger"></span>
+        </div>
+      ) : (
+        <div className="navigation">hello</div>
+      )}
     </header>
   );
 }
