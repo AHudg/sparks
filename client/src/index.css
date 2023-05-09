@@ -19,14 +19,33 @@ code {
     monospace;
 }
 
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .homeLogo {
   width: 5vw;
   margin: 1rem 1.5rem;
 }
 
 .topHamburger {
-  width: 300px;
-  height: 300px;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  display: block;
+}
+
+.middleHamburger {
+  width: 20px;
+  height: 3px;
+  background-color: black;
+  display: block;
+}
+
+.bottomHamburger {
+  width: 15px;
+  height: 3px;
   background-color: black;
   display: block;
 }
