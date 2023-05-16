@@ -24,30 +24,55 @@ code {
   margin-left: 0;
 }
 
+/* Sizes the 'Home' logo button on top left screen */
 .homeLogo {
   width: 5vw;
   margin: 1rem 1.5rem;
 }
 
+h1 {
+  display: inline-block;
+  font-size: 30px;
+}
+
+.hamburger {
+  margin: 15px 15px 0 0;
+  position: fixed;
+  right: 0px;
+}
+
 .topHamburger {
-  width: 25px;
+  width: 35px;
   height: 3px;
+  position: absolute;
+  top: 0;
+  right: 0px;
   background-color: black;
-  display: block;
+  display: inline-block;
 }
 
 .middleHamburger {
-  width: 20px;
+  width: 25px;
   height: 3px;
+  position: absolute;
+  top: 10px;
+  right: 0px;
   background-color: black;
-  display: block;
+  display: inline-block;
 }
 
 .bottomHamburger {
-  width: 15px;
+  width: 30px;
   height: 3px;
+  position: absolute;
+  top: 20px;
+  right: 0px;
   background-color: black;
-  display: block;
+  display: inline-block;
+}
+
+/* styles the desktop navigation bar */
+.nav {
 }
 
 @media screen and (min-width: 768px) {

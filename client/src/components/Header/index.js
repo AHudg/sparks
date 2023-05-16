@@ -22,14 +22,30 @@ export default function Header() {
         <a href="/" className="col-2">
           <img src={homeLogo} className="homeLogo"></img>
         </a>
+        <h1 classname="col-3">Kindling by J</h1>
         {screenWidth < breakpoint ? (
-          <div className="col-2 row justify-content-end">
+          <div className="col-7 hamburger">
             <span className="topHamburger"></span>
             <span className="middleHamburger"></span>
             <span className="bottomHamburger"></span>
           </div>
         ) : (
-          <div className="navigation">hello</div>
+          <nav className="col-8">
+            <ul className="row">
+              <li className="col-3 nav">
+                <a href="/blog">Blog</a>
+              </li>
+              <li className="col-3 nav">
+                <a href="/about">About</a>
+              </li>
+              <li className="col-3 nav">
+                <a>Store</a>
+              </li>
+              <li className="col-3 nav">
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
         )}
       </div>
     </header>

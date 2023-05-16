@@ -5,6 +5,7 @@ import Loading from "./components/Loading/Loading";
 import Header from "./components/Header";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
+import Blog from "./pages/Blog";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
           </Routes>
           <footer></footer>
         </div>
