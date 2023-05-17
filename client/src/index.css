@@ -42,7 +42,7 @@ ul {
 }
 
 /* opaque box behind the hamburger */
-.hamburger {
+.hamburgerOpen {
   height: 40px;
   width: 40px;
   padding: 0;
@@ -59,7 +59,7 @@ ul {
   position: absolute;
   top: 10px;
   right: 5px;
-  background-color: rgb(192, 58, 0);
+  background-color: #c03a00;
   display: inline-block;
 }
 
@@ -83,7 +83,7 @@ ul {
   display: inline-block;
 }
 
-.mobileNav {
+.menu {
   position: absolute;
   top: 0;
   height: 100vh;

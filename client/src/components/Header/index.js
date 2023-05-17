@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import homeLogo from "../../homeLogo.png";
+import { gsap } from "gsap";
 
 export default function Header() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const breakpoint = 768;
 
   const [open, setOpen] = useState(false);
+
+  const [icon, setIcon] = useState("hamburgerOpen");
 
   useEffect(() => {
     const handleResize = () => {
@@ -18,8 +21,23 @@ export default function Header() {
     };
   }, []);
 
-  const handleMobileNav = () => {
+  useEffect(() => {
+    document.getElementById("hamIcon").className = icon;
+  });
+
+  const handleMenu = () => {
     setOpen(!open);
+
+    if (icon === "hamburgerOpen") {
+      // setIcon("hamburgerClose");
+      gsap.to(".hamburgerOpen", { borderRadius: "50%" });
+      gsap.to(".topHamburger", { rotate: 45, y: 9, x: -3, scaleX: 1.25 });
+      gsap.to(".middleHamburger", { rotate: -45, x: -4, scaleX: 1.6 });
+      gsap.to(".bottomHamburger", { opacity: 0 });
+    } else {
+      // setIcon("hamburgerOpen");
+      gsap.to(".hamburgerOpen", { borderRadius: "0" });
+    }
   };
 
   return (
@@ -29,7 +47,7 @@ export default function Header() {
           <img src={homeLogo} className="homeLogo"></img>
         </a>
         {screenWidth < breakpoint ? (
-          <div className="col-10 hamburger" onClick={handleMobileNav}>
+          <div id="hamIcon" className={`col-10 ${icon}`} onClick={handleMenu}>
             <span className="topHamburger"></span>
             <span className="middleHamburger"></span>
             <span className="bottomHamburger"></span>
@@ -55,7 +73,7 @@ export default function Header() {
       </div>
 
       {open === true ? (
-        <div className="mobileNav">
+        <div className="menu">
           <nav>
             <ul className="row justify-content-center">
               <li className="col-12">
