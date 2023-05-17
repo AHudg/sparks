@@ -19,6 +19,17 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Overrides bootstrap-- w/o this, the viewport is off */
 .row {
   margin-right: 0;
   margin-left: 0;
@@ -30,34 +41,35 @@ code {
   margin: 1rem 1.5rem;
 }
 
-h1 {
-  display: inline-block;
-  font-size: 30px;
-}
-
+/* opaque box behind the hamburger */
 .hamburger {
-  margin: 15px 15px 0 0;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  margin: 10px 10px 0 0;
   position: fixed;
   right: 0px;
+  background-color: rgba(255, 132, 0, 0.5);
+  z-index: 1;
 }
 
 .topHamburger {
-  width: 35px;
-  height: 3px;
-  position: absolute;
-  top: 0;
-  right: 0px;
-  background-color: black;
-  display: inline-block;
-}
-
-.middleHamburger {
   width: 25px;
   height: 3px;
   position: absolute;
   top: 10px;
-  right: 0px;
-  background-color: black;
+  right: 5px;
+  background-color: rgb(192, 58, 0);
+  display: inline-block;
+}
+
+.middleHamburger {
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  background-color: rgb(192, 58, 0);
   display: inline-block;
 }
 
@@ -65,14 +77,18 @@ h1 {
   width: 30px;
   height: 3px;
   position: absolute;
-  top: 20px;
-  right: 0px;
-  background-color: black;
+  top: 30px;
+  right: 5px;
+  background-color: rgb(192, 58, 0);
   display: inline-block;
 }
 
-/* styles the desktop navigation bar */
-.nav {
+.mobileNav {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(4, 80, 68);
 }
 
 @media screen and (min-width: 768px) {
