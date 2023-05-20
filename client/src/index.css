@@ -42,64 +42,83 @@ ul {
 }
 
 /* opaque box behind the hamburger */
-.hamburgerOpen {
+.hamBorder {
   height: 40px;
   width: 40px;
-  padding: 0;
-  margin: 10px 10px 0 0;
   position: fixed;
   right: 0px;
-  background-color: #ff840080;
-  z-index: 1;
+  top: 0px;
+  margin: 10px 10px 0 0;
+  z-index: 9;
 }
 
-.topHamburger {
+.hamTop {
   width: 25px;
   height: 3px;
   position: absolute;
   top: 10px;
-  right: 5px;
+  right: 10px;
   background-color: #c03a00;
   display: inline-block;
 }
 
-.middleHamburger {
+.hamMiddle {
   width: 20px;
   height: 3px;
   position: absolute;
   top: 20px;
-  right: 5px;
+  right: 10px;
   background-color: rgb(192, 58, 0);
   display: inline-block;
 }
 
-.bottomHamburger {
-  width: 30px;
+.hamBottom {
+  width: 25px;
   height: 3px;
   position: absolute;
   top: 30px;
-  right: 5px;
+  right: 10px;
   background-color: rgb(192, 58, 0);
   display: inline-block;
 }
 
+/* toggled through hamburger */
 .menu {
   position: absolute;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgb(4, 80, 68);
-  z-index: 3;
 }
 
-.close {
-  z-index: 1;
-}
-
-.rectangle {
+.ribbonOne {
+  width: 33vw;
+  height: 100vh;
   position: absolute;
-  top: -500px;
+  top: -100vh;
+  left: 0;
+  background-color: rgb(4, 80, 68);
+  display: inline-block;
+}
+
+.ribbonTwo {
+  width: 34vw;
+  height: 100vh;
+  position: absolute;
+  top: -100vh;
+  left: 33vw;
+  background-color: rgb(4, 80, 68);
+  display: inline-block;
+}
+
+.ribbonThree {
+  width: 33vw;
+  height: 100vh;
+  position: absolute;
+  top: -100vh;
+  right: 0;
+  background-color: rgb(4, 80, 68);
+  display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
