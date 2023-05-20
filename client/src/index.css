@@ -49,7 +49,7 @@ ul {
   margin: 10px 10px 0 0;
   position: fixed;
   right: 0px;
-  background-color: rgba(255, 132, 0, 0.5);
+  background-color: #ff840080;
   z-index: 1;
 }
 
@@ -90,7 +90,16 @@ ul {
   height: 100vh;
   width: 100vw;
   background-color: rgb(4, 80, 68);
-  z-index: 2;
+  z-index: 3;
+}
+
+.close {
+  z-index: 1;
+}
+
+.rectangle {
+  position: absolute;
+  top: -500px;
 }
 
 @media screen and (min-width: 768px) {
