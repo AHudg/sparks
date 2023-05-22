@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
+import tealBg from "../../tealbackground.png";
 
 export default function Hamburger() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      gsap.to(".menu", { opacity: 1 }, 1);
+    }
+  });
 
   const handleMenu = () => {
     setOpen(!open);
@@ -14,7 +21,11 @@ export default function Hamburger() {
       openTl.to(".ribbonOne", { y: window.innerHeight });
       openTl.to(".ribbonTwo", { y: window.innerHeight });
       openTl.to(".ribbonThree", { y: window.innerHeight });
-      openTl.to(".hamMiddle", { backgroundColor: "rgba( 192, 58, 0, 0" });
+      openTl.to(
+        ".hamMiddle",
+        { backgroundColor: "rgba( 192, 58, 0, 0" },
+        "=-1"
+      );
       openTl.to(".hamTop", { rotate: 45, y: 10 });
       openTl.to(".hamBottom", { rotate: -45, y: -10 }, "=-.5");
     } else {
@@ -22,9 +33,9 @@ export default function Hamburger() {
       closeTl.to(".hamTop", { rotate: 0, y: 0 });
       closeTl.to(".hamBottom", { rotate: 0, y: 0 }, -0.001);
       closeTl.to(".hamMiddle", { backgroundColor: "rgba( 192, 58, 0, 1" });
-      closeTl.to(".ribbonOne", { y: -window.innerHeight }, "=-.5");
-      closeTl.to(".ribbonTwo", { y: -window.innerHeight });
-      closeTl.to(".ribbonThree", { y: -window.innerHeight });
+      closeTl.to(".ribbonOne", { y: 0 }, "=-.5");
+      closeTl.to(".ribbonTwo", { y: 0 });
+      closeTl.to(".ribbonThree", { y: 0 });
     }
   };
 
@@ -41,27 +52,29 @@ export default function Hamburger() {
         <span className="ribbonThree"></span>
       </div>
       {open === true ? (
-        <div className="menu">
-          <nav>
-            <ul className="row justify-content-center align-items-center">
-              <li className="col-12">
-                <a href="/blog">Blog</a>
-              </li>
-
-              <li className="col-12">
-                <a href="/about">About</a>
-              </li>
-
-              <li className="col-12">
-                <a>Store</a>
-              </li>
-
-              <li className="col-12">
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <nav className="menu">
+          <img src={tealBg} className="menuBg" />
+          <ul className="row menu justify-content-center align-items-center">
+            <li className="col-12 text-center">
+              <a href="/blog" className="menuText">
+                Blog
+              </a>
+            </li>
+            <li className="col-12 text-start">
+              <a href="/about" className="menuText">
+                About
+              </a>
+            </li>
+            <li className="col-12 text-center">
+              <a className="menuText">Store</a>
+            </li>
+            <li className="col-12 text-end">
+              <a href="#contact" className="menuText">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
       ) : (
         <span></span>
       )}
