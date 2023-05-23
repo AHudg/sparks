@@ -14,6 +14,8 @@ function App() {
     setInterval(checkLoad, 1000);
   }, []);
 
+  const [theme, setTheme] = useState("light");
+
   function checkLoad() {
     if (document.getElementsByTagName("body")[0] == undefined) {
       setLoading(true);
@@ -26,7 +28,11 @@ function App() {
     <Router>
       {loading === false ? (
         <div>
-          <Header></Header>
+          {/* TODO pass theme as props to continue using dark mode throughout site */}
+          {/* use localStorage for remembering dark mode upon return */}
+          {/* <button onClick={handleTheme}>Theme</button> */}
+
+          <Header theme={theme} setTheme={setTheme}></Header>
 
           <Routes>
             <Route path="/" element={<Landing />} />

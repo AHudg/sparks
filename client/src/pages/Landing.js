@@ -1,11 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Landing() {
-  return (
-    <main>
-      <p>Landing</p>
-    </main>
-  );
+  return <main></main>;
 }
 
 export default Landing;
