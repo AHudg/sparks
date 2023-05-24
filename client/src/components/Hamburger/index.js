@@ -21,11 +21,11 @@ export default function Hamburger() {
       );
       openTl.to(".hamTop", { rotate: 45, y: 10 });
       openTl.to(".hamBottom", { rotate: -45, y: -10 }, "=-.5");
-      openTl.to(".menu", { opacity: 1 });
+      openTl.to(".menu", { display: "inline-block", opacity: 1 });
     } else {
       const closeTl = gsap.timeline();
       // TODO how to use useEffect to animate an unmounting DOM element
-      closeTl.to(".menu", { opacity: 0 });
+      closeTl.to(".menu", { display: "none", opacity: 0 });
       closeTl.to(".hamTop", { rotate: 0, y: 0 });
       closeTl.to(".hamBottom", { rotate: 0, y: 0 }, -0.001);
       closeTl.to(".hamMiddle", { backgroundColor: "rgba( 192, 58, 0, 1" });
@@ -40,39 +40,53 @@ export default function Hamburger() {
   };
 
   return (
-    <div>
+    <div className="col-8">
       <div className="hamBorder" onClick={handleMenu}>
         <span className="hamTop"></span>
         <span className="hamMiddle"></span>
         <span className="hamBottom"></span>
       </div>
-      <div className="row">
-        <span className="ribbonOne"></span>
-        <span className="ribbonTwo"></span>
-        <span className="ribbonThree"></span>
-      </div>
-      <nav className="menu">
-        <img src={tealBg} className="menuBg" />
-        <ul className="row menu justify-content-center align-items-center">
-          <li className="col-12 text-center">
-            <a href="/blog" className="menuText">
-              Blog
-            </a>
-          </li>
-          <li className="col-12 text-start">
-            <a href="/about" className="menuText">
-              About
-            </a>
-          </li>
-          <li className="col-12 text-center">
-            <a className="menuText">Store</a>
-          </li>
-          <li className="col-12 text-end">
-            <a href="#contact" className="menuText">
-              Contact
-            </a>
-          </li>
-        </ul>
+
+      <nav>
+        <div className="row">
+          <span className="ribbonOne"></span>
+          <span className="ribbonTwo"></span>
+          <span className="ribbonThree"></span>
+        </div>
+        <div className="menu">
+          {/* <i className="fa-solid fa-moon moon"></i> */}
+          <i className="fa-regular fa-moon moonMobile"></i>
+          {/* <i className="fa-solid fa-sun sun"></i> */}
+          <i className="fa-regular fa-sun sunMobile"></i>
+
+          <span className="menuBar"></span>
+
+          <ul className="row menuText justify-content-center align-items-center">
+            <li className="col-12">
+              <a href="/blog" className="menuWord">
+                Blog
+              </a>
+            </li>
+
+            <li className="col-12">
+              <a href="/about" className="menuWord">
+                About
+              </a>
+            </li>
+
+            <li className="col-12">
+              <a className="menuWord">Store</a>
+            </li>
+
+            <li className="col-12">
+              <a href="#contact" className="menuWord contact">
+                Contact
+              </a>
+            </li>
+          </ul>
+
+          <img src={tealBg} className="menuBg" />
+        </div>
       </nav>
     </div>
   );

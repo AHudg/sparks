@@ -31,15 +31,16 @@ export default function Header({ theme, setTheme }) {
   };
 
   return (
-    <header className="">
+    <header>
       <div className="row justify-content-between">
-        <a href="/" className="col-2">
-          <img src={homeLogo} className="homeLogo"></img>
+        <a href="/" className="col-4">
+          <h1>Kindling</h1>
+          {/* <img src={homeLogo} className="homeLogo"></img> */}
         </a>
         {screenWidth < breakpoint ? (
           <Hamburger></Hamburger>
         ) : (
-          <nav className="col-10">
+          <nav className="col-9">
             <ul className="row">
               <li className="col-2">
                 <a href="/blog">Blog</a>
@@ -57,6 +58,10 @@ export default function Header({ theme, setTheme }) {
                 <button onClick={handleTheme}>Theme</button>
               </li>
             </ul>
+            {/* <i class="fa-solid fa-moon moon"></i> */}
+            <i class="fa-regular fa-moon moon"></i>
+            {/* <i class="fa-solid fa-sun sun"></i> */}
+            <i class="fa-regular fa-sun sun"></i>
           </nav>
         )}
       </div>

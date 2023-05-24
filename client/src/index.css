@@ -2,6 +2,9 @@
 
 :root {
   font-size: 16px;
+  --vermillion: rgb(192, 58, 0);
+  --sandstone: rgb(239, 141, 99);
+  --teal: rgb(22, 89, 74);
 }
 
 body {
@@ -48,14 +51,56 @@ ul {
   margin: 1rem 1.5rem;
 }
 
+h1 {
+  font-size: 2rem;
+  color: var(--vermillion);
+  margin: 5px;
+}
+
+.sun {
+  width: auto;
+  color: rgb(239, 141, 99);
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  padding: 0px;
+}
+
+.sunMobile {
+  width: auto;
+  color: rgb(239, 141, 99);
+  position: absolute;
+  top: 16px;
+  left: 10px;
+  padding: 0px;
+}
+
+.moon {
+  width: 20px;
+  color: rgb(239, 141, 99);
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  padding: 0px;
+}
+
+.moonMobile {
+  width: auto;
+  color: rgb(239, 141, 99);
+  position: absolute;
+  top: 35px;
+  left: 13px;
+  padding: 0px;
+}
+
 /* opaque box behind the hamburger */
 .hamBorder {
-  height: 40px;
-  width: 40px;
-  position: fixed;
-  right: 0px;
-  top: 0px;
-  margin: 10px 10px 0 0;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  /* margin: 10px 10px 0 0; */
   z-index: 9;
 }
 
@@ -91,26 +136,44 @@ ul {
 
 /* toggled through hamburger */
 .menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 95vw;
-  margin: 0 2.5vw;
+  /* position: absolute;
+  top: 55px;
+  left: 55px; */
+  display: none;
   opacity: 0;
 }
 
 .menuBg {
   height: 50vh;
-  filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.5));
   position: absolute;
   bottom: 30px;
   left: 20px;
+  filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.5));
 }
 
 .menuText {
+  position: absolute;
+  top: 40px;
+  left: 55px;
+}
+
+.menuWord {
   font-size: 36px;
   color: rgb(239, 141, 99);
+}
+
+.contact {
+  font-size: 24px;
+}
+
+.menuBar {
+  display: inline-block;
+  width: 5px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  background-color: var(--sandstone);
 }
 
 .ribbonOne {
