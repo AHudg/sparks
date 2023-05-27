@@ -2,9 +2,14 @@ import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import tealBg from "../../tealbackground.png";
 
-export default function Hamburger() {
-  const [open, setOpen] = useState(false);
-
+export default function Hamburger({
+  theme,
+  setTheme,
+  handleTheme,
+  open,
+  setOpen,
+  handleMenu,
+}) {
   // TODO Bugs present. If double clicked, the animation glitches
   // This causes visual bugs.
   // TODO Unfinished code. The menu is opaque: 0- still clickable when open is false
@@ -35,10 +40,6 @@ export default function Hamburger() {
     }
   }, [open]);
 
-  const handleMenu = () => {
-    setOpen(!open);
-  };
-
   return (
     <div className="col-8">
       <div className="hamBorder" onClick={handleMenu}>
@@ -54,10 +55,11 @@ export default function Hamburger() {
           <span className="ribbonThree"></span>
         </div>
         <div className="menu">
-          {/* <i className="fa-solid fa-moon moon"></i> */}
-          <i className="fa-regular fa-moon moonMobile"></i>
-          {/* <i className="fa-solid fa-sun sun"></i> */}
-          <i className="fa-regular fa-sun sunMobile"></i>
+          <i
+            className="fa-regular fa-moon moonMobile"
+            onClick={handleTheme}
+          ></i>
+          <i className="fa-regular fa-sun sunMobile" onClick={handleTheme}></i>
 
           <span className="menuBar"></span>
 

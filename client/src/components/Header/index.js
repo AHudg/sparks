@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import homeLogo from "../../homeLogo.png";
 import Hamburger from "../Hamburger";
+import Navigation from "../Navigation";
 
-export default function Header({ theme, setTheme }) {
+export default function Header({
+  theme,
+  setTheme,
+  handleTheme,
+  open,
+  setOpen,
+}) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const breakpoint = 768;
 
@@ -21,48 +28,59 @@ export default function Header({ theme, setTheme }) {
     document.body.className = theme;
   }, [theme]);
 
-  const handleTheme = () => {
-    console.log("here");
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
+  const handleMenu = () => {
+    setOpen(!open);
   };
 
   return (
     <header>
-      <div className="row justify-content-between">
+      <div className="row justify-content-between align-items-end">
         <a href="/" className="col-4">
           <h1>Kindling</h1>
           {/* <img src={homeLogo} className="homeLogo"></img> */}
         </a>
         {screenWidth < breakpoint ? (
-          <Hamburger></Hamburger>
+          <Hamburger
+            theme={theme}
+            setTheme={setTheme}
+            handleTheme={handleTheme}
+            open={open}
+            setOpen={setOpen}
+            handleMenu={handleMenu}
+          ></Hamburger>
         ) : (
-          <nav className="col-9">
-            <ul className="row">
-              <li className="col-2">
-                <a href="/blog">Blog</a>
-              </li>
-              <li className="col-2">
-                <a href="/about">About</a>
-              </li>
-              <li className="col-2">
-                <a>Store</a>
-              </li>
-              <li className="col-2">
-                <a href="#contact">Contact</a>
-              </li>
-              <li className="col-2">
-                <button onClick={handleTheme}>Theme</button>
-              </li>
-            </ul>
-            {/* <i class="fa-solid fa-moon moon"></i> */}
-            <i class="fa-regular fa-moon moon"></i>
-            {/* <i class="fa-solid fa-sun sun"></i> */}
-            <i class="fa-regular fa-sun sun"></i>
-          </nav>
+          <div className="col-8">
+            <nav className="deskNav">
+              <ul className="row justify-content-center align-items-end">
+                <li className="col-2">
+                  <a href="/blog" className="navWord">
+                    Blog
+                  </a>
+                </li>
+                <li className="col-2">
+                  <a href="/about" className="navWord">
+                    About
+                  </a>
+                </li>
+                <li className="col-2">
+                  <a className="navWord">Store</a>
+                </li>
+                <li className="col-2">
+                  <a href="#contact" className="navWord">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>{" "}
+            <i
+              className="fa-regular fa-moon fa-lg moon"
+              onClick={handleTheme}
+            ></i>
+            <i
+              className="fa-regular fa-sun fa-lg sun"
+              onClick={handleTheme}
+            ></i>
+          </div>
         )}
       </div>
     </header>

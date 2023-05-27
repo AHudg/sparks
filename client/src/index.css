@@ -1,4 +1,4 @@
-@import-normalize;
+/* @import-normalize; */
 
 :root {
   font-size: 16px;
@@ -37,60 +37,64 @@ ul {
   margin-left: 0;
 }
 
+/* themes for light/dark mode */
 .light {
   background-color: antiquewhite;
 }
 
 .dark {
-  background-color: rgb(22, 89, 74);
+  background-color: var(--teal);
 }
 
-/* Sizes the 'Home' logo button on top left screen */
-.homeLogo {
-  width: 5vw;
-  margin: 1rem 1.5rem;
-}
-
+/* Kindling header */
 h1 {
   font-size: 2rem;
   color: var(--vermillion);
   margin: 5px;
 }
 
-.sun {
-  width: auto;
-  color: rgb(239, 141, 99);
-  position: absolute;
-  top: 16px;
-  right: 10px;
-  padding: 0px;
-}
-
 .sunMobile {
   width: auto;
-  color: rgb(239, 141, 99);
+  color: var(--sandstone);
   position: absolute;
   top: 16px;
-  left: 10px;
-  padding: 0px;
-}
-
-.moon {
-  width: 20px;
-  color: rgb(239, 141, 99);
-  position: absolute;
-  top: 30px;
-  right: 10px;
+  left: 20px;
   padding: 0px;
 }
 
 .moonMobile {
   width: auto;
-  color: rgb(239, 141, 99);
+  color: var(--sandstone);
   position: absolute;
-  top: 35px;
-  left: 13px;
+  top: 40px;
+  left: 23px;
   padding: 0px;
+}
+
+.sun {
+  width: auto;
+  color: var(--sandstone);
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  padding: 0px;
+}
+
+.sun:hover {
+  color: var(--vermillion);
+}
+
+.moon {
+  width: auto;
+  color: var(--sandstone);
+  position: absolute;
+  top: 45px;
+  right: 11px;
+  padding: 0px;
+}
+
+.moon:hover {
+  color: var(--vermillion);
 }
 
 /* opaque box behind the hamburger */
@@ -110,7 +114,7 @@ h1 {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #c03a00;
+  background-color: var(--vermillion);
   display: inline-block;
 }
 
@@ -120,7 +124,7 @@ h1 {
   position: absolute;
   top: 20px;
   right: 10px;
-  background-color: rgb(192, 58, 0);
+  background-color: var(--vermillion);
   display: inline-block;
 }
 
@@ -130,7 +134,7 @@ h1 {
   position: absolute;
   top: 30px;
   right: 10px;
-  background-color: rgb(192, 58, 0);
+  background-color: var(--vermillion);
   display: inline-block;
 }
 
@@ -154,12 +158,12 @@ h1 {
 .menuText {
   position: absolute;
   top: 40px;
-  left: 55px;
+  left: 65px;
 }
 
 .menuWord {
   font-size: 36px;
-  color: rgb(239, 141, 99);
+  color: var(--sandstone);
 }
 
 .contact {
@@ -172,7 +176,7 @@ h1 {
   height: 100vh;
   position: absolute;
   top: 0;
-  left: 50px;
+  left: 55px;
   background-color: var(--sandstone);
 }
 
@@ -182,7 +186,7 @@ h1 {
   position: absolute;
   top: -100vh;
   left: 0;
-  background-color: rgb(22, 89, 74);
+  background-color: var(--teal);
   display: inline-block;
 }
 
@@ -192,7 +196,7 @@ h1 {
   position: absolute;
   top: -100vh;
   left: 33vw;
-  background-color: rgb(22, 89, 74);
+  background-color: var(--teal);
   display: inline-block;
 }
 
@@ -202,8 +206,61 @@ h1 {
   position: absolute;
   top: -100vh;
   right: 0;
-  background-color: rgb(22, 89, 74);
+  background-color: var(--teal);
   display: inline-block;
+}
+
+/* TODO desktop navigation CSS */
+.deskNav {
+  /* position: relative;
+  top: 18px;
+  left: 200px;
+  top: -32px;
+  left: 50px; */
+}
+
+.navWord {
+  font-size: 1rem;
+  color: var(--sandstone);
+}
+
+.navWord:hover {
+  color: var(--vermillion);
+  border-bottom: solid 2px var(--vermillion);
+}
+
+.video {
+  background-color: black;
+  width: 100vw;
+  height: 350px;
+}
+
+/* .blogCOA {
+  width: 100vw;
+  height: 90vh;
+  background-color: var(--vermillion);
+  margin: 2vh 0 8vh 0;
+  filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.5));
+} */
+
+/* .aboutCOA {
+  width: 100vw;
+  height: 300px;
+  background-color: var(--teal);
+  margin: 10px 0;
+  filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.5));
+} */
+
+.social {
+  color: var(--sandstone);
+}
+
+.contactHeader {
+  font-size: 30px;
+}
+
+.contactText {
+  margin: 0 20px;
 }
 
 @media screen and (min-width: 768px) {
