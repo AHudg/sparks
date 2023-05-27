@@ -3,7 +3,7 @@ import "./Header.css";
 import Hamburger from "../Hamburger";
 import ThemeContext from "../ThemeContext";
 
-export default function Header({ handleTheme }) {
+export default function Header() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const breakpoint = 768;
 
@@ -18,27 +18,17 @@ export default function Header({ handleTheme }) {
     };
   }, []);
 
-  let { theme } = useContext(ThemeContext);
-  let { open } = useContext(ThemeContext);
-  let { setOpen } = useContext(ThemeContext);
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
-
-  const handleMenu = () => {
-    setOpen(!open);
-  };
+  const { theme } = useContext(ThemeContext);
+  const { handleTheme } = useContext(ThemeContext);
 
   return (
     <header>
       <div className="row justify-content-between align-items-end">
         <a href="/" className="col-4">
           <h1>Kindling</h1>
-          {/* <img src={homeLogo} className="homeLogo"></img> */}
         </a>
         {screenWidth < breakpoint ? (
-          <Hamburger handleMenu={handleMenu}></Hamburger>
+          <Hamburger></Hamburger>
         ) : (
           <div className="col-8">
             <nav>

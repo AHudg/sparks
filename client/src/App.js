@@ -10,12 +10,19 @@ import Blog from "./pages/Blog";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem("theme")) || "light"
+  );
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     setInterval(checkLoad, 1000);
   }, [loading]);
+
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
 
   function checkLoad() {
     if (document.getElementsByTagName("body")[0] == undefined) {
@@ -43,7 +50,7 @@ function App() {
             {/* use localStorage for remembering dark mode upon return */}
             {/* <button onClick={handleTheme}>Theme</button> */}
 
-            <Header handleTheme={handleTheme}></Header>
+            <Header></Header>
 
             <Routes>
               <Route path="/" element={<Landing />} />

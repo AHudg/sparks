@@ -4,12 +4,13 @@ import { gsap } from "gsap";
 import tealBg from "../../tealbackground.png";
 import ThemeContext from "../ThemeContext";
 
-export default function Hamburger({ handleMenu }) {
+export default function Hamburger() {
   // TODO Bugs present. If double clicked, the animation glitches
   // This causes visual bugs.
+  const { theme } = useContext(ThemeContext);
   const { handleTheme } = useContext(ThemeContext);
   const { open } = useContext(ThemeContext);
-  const { theme } = useContext(ThemeContext);
+  const { setOpen } = useContext(ThemeContext);
 
   const openTl = gsap.timeline();
   const closeTl = gsap.timeline();
@@ -27,7 +28,9 @@ export default function Hamburger({ handleMenu }) {
       openTl.to(".hamTop", { rotate: 45, y: 10 });
       openTl.to(".hamBottom", { rotate: -45, y: -10 }, "=-.5");
       openTl.to(".menu", { display: "inline-block", opacity: 1 });
+      console.log("open here");
     } else {
+      console.log("close here");
       closeTl.to(".menu", { display: "none", opacity: 0 });
       closeTl.to(".hamTop", { rotate: 0, y: 0 });
       closeTl.to(".hamBottom", { rotate: 0, y: 0 }, -0.001);
@@ -37,6 +40,10 @@ export default function Hamburger({ handleMenu }) {
       closeTl.to(".ribbonThree", { y: 0 });
     }
   }, [open]);
+
+  const handleMenu = () => {
+    setOpen(!open);
+  };
 
   return (
     <div className="col-8">
