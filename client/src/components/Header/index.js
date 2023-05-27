@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from "react";
-import homeLogo from "../../homeLogo.png";
+import React, { useState, useEffect, useContext } from "react";
+import "./Header.css";
 import Hamburger from "../Hamburger";
-import Navigation from "../Navigation";
+import ThemeContext from "../ThemeContext";
 
-export default function Header({
-  theme,
-  setTheme,
-  handleTheme,
-  open,
-  setOpen,
-}) {
+export default function Header({ handleTheme }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const breakpoint = 768;
 
@@ -23,6 +17,10 @@ export default function Header({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  let { theme } = useContext(ThemeContext);
+  let { open } = useContext(ThemeContext);
+  let { setOpen } = useContext(ThemeContext);
 
   useEffect(() => {
     document.body.className = theme;
@@ -40,17 +38,10 @@ export default function Header({
           {/* <img src={homeLogo} className="homeLogo"></img> */}
         </a>
         {screenWidth < breakpoint ? (
-          <Hamburger
-            theme={theme}
-            setTheme={setTheme}
-            handleTheme={handleTheme}
-            open={open}
-            setOpen={setOpen}
-            handleMenu={handleMenu}
-          ></Hamburger>
+          <Hamburger handleMenu={handleMenu}></Hamburger>
         ) : (
           <div className="col-8">
-            <nav className="deskNav">
+            <nav>
               <ul className="row justify-content-center align-items-end">
                 <li className="col-2">
                   <a href="/blog" className="navWord">
@@ -71,13 +62,11 @@ export default function Header({
                   </a>
                 </li>
               </ul>
-            </nav>{" "}
+            </nav>
             <i
-              className="fa-regular fa-moon fa-lg moon"
-              onClick={handleTheme}
-            ></i>
-            <i
-              className="fa-regular fa-sun fa-lg sun"
+              className={`fa-regular fa-lg fa-${
+                theme === "light" ? "moon" : "sun"
+              } themeButton`}
               onClick={handleTheme}
             ></i>
           </div>

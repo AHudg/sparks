@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import "../Header/Header.css";
 import { gsap } from "gsap";
 import tealBg from "../../tealbackground.png";
+import ThemeContext from "../ThemeContext";
 
-export default function Hamburger({
-  theme,
-  setTheme,
-  handleTheme,
-  open,
-  setOpen,
-  handleMenu,
-}) {
+export default function Hamburger({ handleMenu }) {
   // TODO Bugs present. If double clicked, the animation glitches
   // This causes visual bugs.
-  // TODO Unfinished code. The menu is opaque: 0- still clickable when open is false
+  const { handleTheme } = useContext(ThemeContext);
+  const { open } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
+
+  const openTl = gsap.timeline();
+  const closeTl = gsap.timeline();
+
   useEffect(() => {
     if (open) {
-      const openTl = gsap.timeline();
       openTl.to(".ribbonOne", { y: window.innerHeight });
       openTl.to(".ribbonTwo", { y: window.innerHeight });
       openTl.to(".ribbonThree", { y: window.innerHeight });
@@ -28,8 +28,6 @@ export default function Hamburger({
       openTl.to(".hamBottom", { rotate: -45, y: -10 }, "=-.5");
       openTl.to(".menu", { display: "inline-block", opacity: 1 });
     } else {
-      const closeTl = gsap.timeline();
-      // TODO how to use useEffect to animate an unmounting DOM element
       closeTl.to(".menu", { display: "none", opacity: 0 });
       closeTl.to(".hamTop", { rotate: 0, y: 0 });
       closeTl.to(".hamBottom", { rotate: 0, y: 0 }, -0.001);
@@ -56,14 +54,15 @@ export default function Hamburger({
         </div>
         <div className="menu">
           <i
-            className="fa-regular fa-moon moonMobile"
+            className={`fa-regular fa-lg fa-${
+              theme === "light" ? "moon" : "sun"
+            } themeButtonMobile`}
             onClick={handleTheme}
           ></i>
-          <i className="fa-regular fa-sun sunMobile" onClick={handleTheme}></i>
 
           <span className="menuBar"></span>
 
-          <ul className="row menuText justify-content-center align-items-center">
+          <ul className="menuText row justify-content-center align-items-center">
             <li className="col-12">
               <a href="/blog" className="menuWord">
                 Blog
@@ -81,7 +80,7 @@ export default function Hamburger({
             </li>
 
             <li className="col-12">
-              <a href="#contact" className="menuWord contact">
+              <a href="#contact" className="menuWord menuContact">
                 Contact
               </a>
             </li>

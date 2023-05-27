@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Loading from "./components/Loading/Loading";
+import ThemeContext from "./components/ThemeContext";
 import Header from "./components/Header";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
@@ -9,14 +10,12 @@ import Blog from "./pages/Blog";
 
 function App() {
   const [loading, setLoading] = useState(true);
-
   const [theme, setTheme] = useState("light");
-
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     setInterval(checkLoad, 1000);
-  }, []);
+  }, [loading]);
 
   function checkLoad() {
     if (document.getElementsByTagName("body")[0] == undefined) {
@@ -27,11 +26,8 @@ function App() {
   }
 
   const handleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
 
     if (open) {
       setOpen(!open);
@@ -40,33 +36,26 @@ function App() {
 
   return (
     <Router>
-      {loading === false ? (
-        <div>
-          {/* TODO pass theme as props to continue using dark mode throughout site */}
-          {/* use localStorage for remembering dark mode upon return */}
-          {/* <button onClick={handleTheme}>Theme</button> */}
+      <ThemeContext.Provider value={{ theme, handleTheme, open, setOpen }}>
+        {loading === false ? (
+          <div>
+            {/* TODO pass theme as props to continue using dark mode throughout site */}
+            {/* use localStorage for remembering dark mode upon return */}
+            {/* <button onClick={handleTheme}>Theme</button> */}
 
-          <Header
-            theme={theme}
-            setTheme={setTheme}
-            handleTheme={handleTheme}
-            open={open}
-            setOpen={setOpen}
-          ></Header>
+            <Header handleTheme={handleTheme}></Header>
 
-          <Routes>
-            <Route
-              path="/"
-              element={<Landing theme={theme} setTheme={setTheme} />}
-            />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-          </Routes>
-          <footer></footer>
-        </div>
-      ) : (
-        <Loading></Loading>
-      )}
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+            </Routes>
+            <footer></footer>
+          </div>
+        ) : (
+          <Loading></Loading>
+        )}
+      </ThemeContext.Provider>
     </Router>
   );
 }

@@ -1,0 +1,31 @@
+:root {
+  font-size: 16px;
+  --vermillion: rgb(192, 58, 0);
+  --sandstone: rgb(239, 141, 99);
+  --teal: rgb(22, 89, 74);
+}
+
+.social {
+  color: var(--sandstone);
+}
+
+.social:hover {
+  color: var(--vermillion);
+}
+
+.contactHeader {
+  font-size: 30px;
+  color: var(--vermillion);
+}
+
+.contactText {
+  margin: 0 20px;
+}
+
+.contactWord {
+  color: var(--sandstone);
+}
+
+.contactWord:hover {
+  color: var(--teal);
+}
