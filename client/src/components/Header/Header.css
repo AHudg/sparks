@@ -1,8 +1,12 @@
 /* Header.css */
 :root {
   font-size: 16px;
-  --vermillion: rgb(192, 58, 0);
-  --sandstone: rgb(239, 141, 99);
+  --ember: rgb(107, 32, 0);
+  --vermillion: rgb(196, 66, 26);
+  --sandstone: rgb(249, 143, 69);
+  --dusty: rgb(254, 222, 197);
+  --mist: rgb(153, 207, 205);
+  --aqua: rgb(18, 144, 142);
   --teal: rgb(22, 89, 74);
 }
 
@@ -11,6 +15,14 @@ h1 {
   font-size: 2rem;
   color: var(--vermillion);
   margin: 5px;
+}
+
+.sticky {
+  background-color: var(--dusty);
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  border-bottom: 5px solid var(--vermillion);
 }
 
 /* TODO css for desktop navigation */
@@ -147,10 +159,11 @@ h1 {
   font-size: 24px;
 }
 
-.menuBg {
+/* TODO background image disappeared but want to change anyways */
+/* .menuBg {
   height: 50vh;
   position: absolute;
-  bottom: 30px;
+  bottom: 0vh;
   left: 20px;
   filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.5));
-}
+} */

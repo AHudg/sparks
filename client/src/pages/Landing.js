@@ -1,14 +1,12 @@
 import React from "react";
 import Contact from "../components/Contact";
+import flameBg from "../flameOutline.png";
 
 function Landing() {
   return (
     <main>
-      <section>
-        <iframe
-          src="https://giphy.com/embed/cbipTNlosP9AY"
-          className="video"
-        ></iframe>
+      <section className="sectLanding">
+        <img src={flameBg} className="flameBg" />
       </section>
       <section className="sectBlog">
         <div className="blogCOA"></div>

@@ -93,7 +93,7 @@ export default function Hamburger() {
             </li>
           </ul>
 
-          <img src={tealBg} className="menuBg" />
+          {/* <img src={tealBg} className="menuBg" /> */}
         </div>
       </nav>
     </div>

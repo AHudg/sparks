@@ -54,21 +54,37 @@ ul {
   height: 350px;
 }
 
-/* .blogCOA {
-  width: 100vw;
+.sectLanding {
   height: 90vh;
-  background-color: var(--vermillion);
+  width: 100vw;
+  position: relative;
+  border-bottom: 5px solid var(--vermillion);
+}
+
+.flameBg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+}
+
+.blogCOA {
+  /* width: 100vw; */
+  height: 80vh;
+  background-image: url("./firebg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 2vh 0 8vh 0;
   filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.5));
-} */
+}
 
-/* .aboutCOA {
+.aboutCOA {
   width: 100vw;
   height: 300px;
   background-color: var(--teal);
   margin: 10px 0;
   filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.5));
-} */
+}
 
 @media screen and (min-width: 768px) {
 }
