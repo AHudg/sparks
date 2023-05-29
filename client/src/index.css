@@ -54,34 +54,21 @@ ul {
   height: 350px;
 }
 
-.sectLanding {
-  height: 92vh;
-  width: 100vw;
-  position: relative;
-  border-bottom: 5px solid var(--vermillion);
+.sectBlog {
+  height: 80vh;
 }
 
 .flameBg {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 0px;
+  bottom: -150px;
   width: 250px;
 }
 
-.blogCOA {
+.sectAbout {
   height: 80vh;
-  /* background-image: url("./firebg.png");
-  background-size: cover;
-  background-repeat: no-repeat; */
-  filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.5));
-}
-
-.aboutCOA {
-  width: 100vw;
-  height: 300px;
-  background-color: var(--teal);
-  margin: 10px 0;
-  filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.5));
+  background-color: var(--ember);
+  border-top: solid 5px var(--sandstone);
 }
 
 @media screen and (min-width: 768px) {

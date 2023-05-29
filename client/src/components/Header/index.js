@@ -22,7 +22,7 @@ export default function Header() {
   const { handleTheme } = useContext(ThemeContext);
 
   return (
-    <header className="sticky">
+    <header className={`sticky ${theme === "light" ? "light" : "dark"}`}>
       <div className="row justify-content-between align-items-end">
         <a href="/" className="col-4">
           <h1>Kindling</h1>

@@ -3,7 +3,7 @@ import "./Contact.css";
 
 function Contact() {
   return (
-    <footer className="footerBg">
+    <footer id="contact" className="footerBg">
       <div className="footerContent row">
         <p className="col-12 col-lg-6 mb-2 contactHeader">Stay Connected!</p>
 
