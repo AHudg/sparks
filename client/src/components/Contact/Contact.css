@@ -1,12 +1,31 @@
 :root {
   font-size: 16px;
-  --vermillion: rgb(192, 58, 0);
-  --sandstone: rgb(239, 141, 99);
+  --ember: rgb(107, 32, 0);
+  --vermillion: rgb(196, 66, 26);
+  --sandstone: rgb(249, 143, 69);
+  --dusty: rgb(254, 222, 197);
+  --mist: rgb(153, 207, 205);
+  --aqua: rgb(18, 144, 142);
   --teal: rgb(22, 89, 74);
+  --dropshadow: rgba(0, 0, 0, 0.5);
+}
+
+.footerBg {
+  height: 80vh;
+  background-image: url("../../firebg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.footerContent {
+  height: 80%;
+  position: absolute;
+  bottom: 0;
 }
 
 .social {
-  color: var(--sandstone);
+  color: var(--dusty);
 }
 
 .social:hover {
@@ -14,8 +33,10 @@
 }
 
 .contactHeader {
-  font-size: 30px;
-  color: var(--vermillion);
+  font-size: 1.5rem;
+  color: var(--mist);
+  font-weight: bold;
+  filter: drop-shadow(0 0 2px var(--dropshadow));
 }
 
 .contactText {
@@ -23,9 +44,50 @@
 }
 
 .contactWord {
-  color: var(--sandstone);
+  color: var(--dusty);
 }
 
 .contactWord:hover {
+  color: var(--sandstone);
+}
+
+.contactCOA {
+  color: var(--dusty);
+  font-size: 1.25rem;
+  filter: drop-shadow(0 0 2px var(--dropshadow));
+  margin: 0;
+}
+
+.input {
+  margin-top: 0;
+}
+
+.email {
+  border-radius: 10px;
+  border: solid 1px var(--teal);
+  background-color: var(--dusty);
   color: var(--teal);
+}
+
+.btnSubscribe {
+  border-radius: 20px;
+  background-color: var(--mist);
+  color: var(--teal);
+  border: none;
+  filter: drop-shadow(0 0 3px var(--dropshadow));
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+  .footerContent {
+    height: 20vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
 }

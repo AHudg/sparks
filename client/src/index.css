@@ -55,7 +55,7 @@ ul {
 }
 
 .sectLanding {
-  height: 90vh;
+  height: 92vh;
   width: 100vw;
   position: relative;
   border-bottom: 5px solid var(--vermillion);
@@ -69,12 +69,10 @@ ul {
 }
 
 .blogCOA {
-  /* width: 100vw; */
   height: 80vh;
-  background-image: url("./firebg.png");
+  /* background-image: url("./firebg.png");
   background-size: cover;
-  background-repeat: no-repeat;
-  margin: 2vh 0 8vh 0;
+  background-repeat: no-repeat; */
   filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.5));
 }
 
