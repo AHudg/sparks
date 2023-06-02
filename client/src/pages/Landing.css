@@ -1,0 +1,60 @@
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sectBlog {
+  position: relative;
+  height: 60vh;
+}
+
+.slogan {
+  margin: 20px 0 0px 0;
+  font-size: 4rem;
+  color: var(--vermillion);
+  font-weight: bold;
+  line-height: 72%;
+  letter-spacing: -5px;
+  overflow: hidden;
+}
+
+.buttonBlog {
+  border-radius: 10px;
+  border: none;
+  background-color: var(--sandstone);
+  filter: drop-shadow(0 0 3px var(--dropshadow));
+}
+
+.flameBg {
+  position: absolute;
+  right: 0px;
+  bottom: -250px;
+  width: 250px;
+  padding: 0;
+}
+
+.sectAbout {
+  height: 80vh;
+  background-color: var(--ember);
+  border-top: solid 5px var(--sandstone);
+}
+
+.vertical {
+  writing-mode: vertical-lr;
+  line-height: 0;
+}
+
+@media screen and (min-width: 575px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}

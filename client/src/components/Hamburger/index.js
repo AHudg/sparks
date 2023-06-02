@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import "../Header/Header.css";
 import { gsap } from "gsap";
-import tealBg from "../../tealbackground.png";
 import ThemeContext from "../ThemeContext";
 
 export default function Hamburger() {

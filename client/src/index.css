@@ -7,6 +7,7 @@
   --mist: rgb(153, 207, 205);
   --aqua: rgb(18, 144, 142);
   --teal: rgb(22, 89, 74);
+  --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -48,30 +49,43 @@ ul {
   background-color: var(--teal);
 }
 
-.video {
-  background-color: black;
-  width: 100vw;
-  height: 350px;
+.loading {
+  height: 100vh;
 }
 
-.sectBlog {
-  height: 80vh;
+/* .slogan {
+  margin: 20px 0 30px 0;
+  font-size: 3.75rem;
+  color: var(--vermillion);
+  font-weight: bold;
+  line-height: 50%;
+  letter-spacing: -5px;
+}
+
+.buttonBlog {
+  border-radius: 10px;
+  border: none;
+  background-color: var(--sandstone);
+  filter: drop-shadow(0 0 3px var(--dropshadow));
 }
 
 .flameBg {
   position: absolute;
-  right: 0px;
-  bottom: -150px;
+  right: 0;
+  bottom: 0;
   width: 250px;
-}
+} */
 
-.sectAbout {
-  height: 80vh;
-  background-color: var(--ember);
-  border-top: solid 5px var(--sandstone);
+@media screen and (min-width: 575px) {
+  .slogan {
+    font-size: 5rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .slogan {
+    font-size: 7rem;
+  }
 }
 
 @media screen and (min-width: 992px) {

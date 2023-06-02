@@ -8,6 +8,7 @@
   --mist: rgb(153, 207, 205);
   --aqua: rgb(18, 144, 142);
   --teal: rgb(22, 89, 74);
+  --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
 /* Kindling header */
@@ -156,6 +157,21 @@ h1 {
 
 .menuContact {
   font-size: 24px;
+}
+
+@media screen and (min-width: 575px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
 }
 
 /* TODO background image disappeared but want to change anyways */
