@@ -37,12 +37,11 @@ ul {
 /* Overrides bootstrap-- w/o this, the viewport is off */
 .row {
   margin-right: 0;
-  margin-left: 0;
 }
 
 /* themes for light/dark mode */
 .light {
-  background-color: var(--dusty);
+  background-image: url("./paperBg.png");
 }
 
 .dark {

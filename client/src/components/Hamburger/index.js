@@ -27,9 +27,7 @@ export default function Hamburger() {
       openTl.to(".hamTop", { rotate: 45, y: 10 });
       openTl.to(".hamBottom", { rotate: -45, y: -10 }, "=-.5");
       openTl.to(".menu", { display: "inline-block", opacity: 1 });
-      console.log("open here");
     } else {
-      console.log("close here");
       closeTl.to(".menu", { display: "none", opacity: 0 });
       closeTl.to(".hamTop", { rotate: 0, y: 0 });
       closeTl.to(".hamBottom", { rotate: 0, y: 0 }, -0.001);
@@ -58,6 +56,7 @@ export default function Hamburger() {
           <span className="ribbonTwo"></span>
           <span className="ribbonThree"></span>
         </div>
+
         <div className="menu">
           <i
             className={`fa-regular fa-lg fa-${

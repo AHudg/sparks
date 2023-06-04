@@ -10,8 +10,13 @@
   --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
+.post {
+  height: 450px;
+  border: solid 1px var(--vermillion);
+}
+
 .thumbnail {
-  height: 130px;
+  height: 200px;
 }
 
 .title {
@@ -21,4 +26,26 @@
 
 .postedOn {
   color: var(--dropshadow);
+}
+
+@media screen and (min-width: 575px) {
+  .post {
+    height: 500px;
+  }
+
+  .thumbnail {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
 }

@@ -18,6 +18,10 @@ p {
   overflow: hidden;
 }
 
+.descBlog {
+  color: var(--ember);
+}
+
 .buttonBlog {
   border-radius: 10px;
   border: none;
@@ -28,19 +32,23 @@ p {
 .flameBg {
   position: absolute;
   right: 0px;
-  bottom: -250px;
+  bottom: -190px;
   width: 250px;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .sectAbout {
-  height: 80vh;
   background-color: var(--ember);
   border-top: solid 5px var(--sandstone);
 }
 
 .vertical {
   writing-mode: vertical-lr;
+  font-size: 4rem;
+  color: var(--vermillion);
+  font-weight: bold;
+  letter-spacing: -5px;
   line-height: 0;
 }
 

@@ -27,6 +27,7 @@ export default function Header() {
         <a href="/" className="col-4">
           <h1>Kindling</h1>
         </a>
+
         {screenWidth < breakpoint ? (
           <Hamburger></Hamburger>
         ) : (
@@ -53,6 +54,7 @@ export default function Header() {
                 </li>
               </ul>
             </nav>
+
             <i
               className={`fa-regular fa-lg fa-${
                 theme === "light" ? "moon" : "sun"

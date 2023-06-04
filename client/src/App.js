@@ -49,7 +49,6 @@ function App() {
             {/* TODO pass theme as props to continue using dark mode throughout site */}
             {/* use localStorage for remembering dark mode upon return */}
             {/* <button onClick={handleTheme}>Theme</button> */}
-
             <Header></Header>
 
             <Routes>
@@ -57,6 +56,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
             </Routes>
+
             <footer></footer>
           </div>
         ) : (

@@ -1,0 +1,13 @@
+.aboutSect {
+  height: 500px;
+  width: 100vw;
+}
+
+.burst {
+  height: 500px;
+  position: absolute;
+  z-index: 9;
+  bottom: 0;
+  right: -250px;
+  overflow-x: hidden;
+}
