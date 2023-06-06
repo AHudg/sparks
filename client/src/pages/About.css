@@ -1,3 +1,14 @@
+:root {
+  --ember: rgb(107, 32, 0);
+  --vermillion: rgb(196, 66, 26);
+  --sandstone: rgb(249, 143, 69);
+  --dusty: rgb(254, 222, 197);
+  --mist: rgb(153, 207, 205);
+  --aqua: rgb(18, 144, 142);
+  --teal: rgb(22, 89, 74);
+  --dropshadow: rgba(0, 0, 0, 0.5);
+}
+
 .aboutSect {
   height: 500px;
   width: 100vw;
@@ -7,7 +18,8 @@
   height: 500px;
   position: absolute;
   z-index: 9;
-  bottom: 0;
-  right: -250px;
+  bottom: 100px;
+  left: -250px;
   overflow-x: hidden;
+  opacity: 50%;
 }
