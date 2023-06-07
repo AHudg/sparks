@@ -1,13 +1,11 @@
 import express from "express";
-import mongoose from "mongoose";
 import { ApolloServer } from "apollo-server-express";
+import { typeDefs, resolvers } from "./schema/index.js";
+import db from "./config/connection.js";
 
-// import db from "./config/connection.js";
-import typeDefs from "./schemas/typeDefs";
-
-// creates the express application and assigns port
-const app = express();
+// assigns port and creates the express application
 const PORT = process.env.PORT || 3001;
+const app = express();
 
 // boilerplate: parses incoming JSON reqs and puts it in req.body
 app.use(express.json());
@@ -29,17 +27,21 @@ async function startApolloServer() {
   // Create a new instance of the Apollo server
   const server = new ApolloServer({
     typeDefs,
+    resolvers,
   });
-  await server.start();
 
-  //   db.once("open", () => {
-  app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}!`);
-    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+  await server.start();
+  server.applyMiddleware({ app });
+
+  db.once("open", () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      console.log(
+        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+      );
+    });
   });
 }
-//   );
-// }
 
 // Call the async function to start the server
-startApolloServer(typeDefs);
+startApolloServer(typeDefs, resolvers);

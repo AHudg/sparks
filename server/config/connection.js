@@ -10,4 +10,4 @@ mongoose.connect(
   }
 );
 
-module.exports = mongoose.connection;
+export default mongoose.connection;

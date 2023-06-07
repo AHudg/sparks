@@ -74,6 +74,7 @@ function Blog() {
               <option value="refurbish">Refurbishing</option>
               <option value="upholster">Re-Upholstering</option>
               <option value="garden">Gardening</option>
+              <option value="exercise">Exercise</option>
             </optgroup>
             <optgroup label="Years">
               <option value="2021">2021</option>
