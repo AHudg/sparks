@@ -2,7 +2,9 @@ import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
   type Query {
-    homePost: [Post!]!
+    allPost: [Post!]!
+    tagPost(tags: String!): [Post!]!
+    idPost(_id: ID!): Post!
   }
 
   type Post {
@@ -11,7 +13,7 @@ export const typeDefs = gql`
     description: String
     thumbnail: String
     url: String!
-    length: Int
+    length: String
     tags: [String]
   }
 `;
