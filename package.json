@@ -9,7 +9,7 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm run deploy",
     "lint": "eslint --fix . && echo 'Lint complete.'"
   },
   "devDependencies": {
@@ -21,6 +21,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.8"
   },
   "browserslist": {

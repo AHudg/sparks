@@ -39,18 +39,18 @@ function Landing() {
             <p className="">STORY</p>
           </div>
 
-          <div className="row mx-3 bgAbout">
+          <div className="row mx-3 py-4 bgAbout">
             <p className="col-6 my-4 mx-4 descAbout">
               Care to learn how we started? Enjoy discovering who we are and
               what environment we strive to foster{" "}
               <a className="buttonAbout" href="/blog">
-                here
+                here.
               </a>
             </p>
           </div>
         </section>
 
-        <section className="sectShop">
+        {/* <section className="sectShop">
           <div className="ornamentShop">
             <p className="">SPREAD</p>
             <p className="">THE WORD</p>
@@ -65,7 +65,7 @@ function Landing() {
               Read Our Story!
             </a>
           </div>
-        </section>
+        </section> */}
       </div>
 
       <Contact></Contact>

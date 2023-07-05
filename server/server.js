@@ -2,6 +2,7 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema/index.js";
 import db from "./config/connection.js";
+import path from "path";
 
 // assigns port and creates the express application
 const PORT = process.env.PORT || 3001;
@@ -12,16 +13,17 @@ app.use(express.json());
 // boilerplate: URL-encoded data will be parsed w/ qs lib allowing nested objs from query strings
 // does not filter out ? from the query string
 app.use(express.urlencoded({ extended: true }));
+// app.use(express.static("public"));
 
 // TODO: we check if Node environment is in production, if so express is told to serve any files in React app's buiild directory in client folder
 // if (process.env.NODE_ENV === "production") {
-//     app.use(express.static(path.join(__dirname, "../client/build")));
-//   }
+//   app.use(express.static(path.join(__dirname, "../client/build")));
+// }
 
 // wildcard GET route- if a location is requested that doesn't have explicit route defined, respond w/ the production-ready REACT code
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 async function startApolloServer() {
   // Create a new instance of the Apollo server

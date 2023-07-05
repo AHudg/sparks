@@ -52,9 +52,11 @@ function App() {
             <Header></Header>
 
             <Routes>
-              <Route path="/" element={<Landing />} />
+              <Route path="/sparks" element={<Landing />} />
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/donate" element={<Blog />} />
+              <Route path="/contact" element={<Blog />} />
             </Routes>
 
             <footer></footer>

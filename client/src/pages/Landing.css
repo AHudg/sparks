@@ -14,6 +14,7 @@ p {
   margin-bottom: 0;
 }
 
+/* Video Section / Intro Styling */
 .sectHero {
   position: relative;
 }
@@ -50,10 +51,10 @@ p {
   filter: drop-shadow(-3px 3px 4px var(--dropshadow));
 }
 
-.sectBlog {
+/* .sectBlog {
   width: 100vw;
   overflow-x: hidden;
-}
+} */
 
 .coaBlog {
   color: var(--ember);
@@ -68,6 +69,7 @@ p {
   color: var(--ember);
 }
 
+/* OUR STORY article styling */
 .sectAbout {
   position: relative;
 }
@@ -83,27 +85,27 @@ p {
   color: var(--mist);
   filter: drop-shadow(-4px 4px 0px var(--sandstone));
   font-weight: bold;
-  letter-spacing: -5px;
+  letter-spacing: 0px;
   line-height: 0;
   margin: 20px 0px 20px 0px;
   position: absolute;
-  right: -10px;
-  top: -40px;
+  right: -12px;
+  top: -10px;
   z-index: 1;
 }
 
 .descAbout {
   color: var(--sandstone);
+  font-size: 1.2rem;
 }
 
-.ornamentShop {
-  margin: 20px 0px 40px 0px;
-  font-size: 3.6rem;
-  color: var(--vermillion);
-  filter: drop-shadow(-4px 4px 0px var(--teal));
-  font-weight: bold;
-  line-height: 75%;
-  letter-spacing: 0px;
+.buttonAbout {
+  color: var(--teal);
+}
+
+.arrow {
+  position: absolute;
+  color: var(--sandstone);
 }
 
 @media screen and (min-width: 575px) {
