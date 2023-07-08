@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import Contact from "./components/Contact";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -14,6 +15,9 @@ function App() {
     JSON.parse(localStorage.getItem("theme")) || "light"
   );
   const [open, setOpen] = useState(false);
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const breakpoint = 768;
 
   useEffect(() => {
     setInterval(checkLoad, 1000);
@@ -23,6 +27,17 @@ function App() {
     document.body.className = theme;
     localStorage.setItem("theme", JSON.stringify(theme));
   }, [theme]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   function checkLoad() {
     if (document.getElementsByTagName("body")[0] == undefined) {
@@ -49,17 +64,24 @@ function App() {
             {/* TODO pass theme as props to continue using dark mode throughout site */}
             {/* use localStorage for remembering dark mode upon return */}
             {/* <button onClick={handleTheme}>Theme</button> */}
-            <Header></Header>
+            <Header screenWidth={screenWidth} breakpoint={breakpoint}></Header>
 
             <Routes>
-              <Route path="/sparks" element={<Landing />} />
+              <Route
+                path="/sparks"
+                element={
+                  <Landing screenWidth={screenWidth} breakpoint={breakpoint} />
+                }
+              />
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/donate" element={<Blog />} />
               <Route path="/contact" element={<Blog />} />
             </Routes>
 
-            <footer></footer>
+            <footer>
+              <Contact></Contact>
+            </footer>
           </div>
         ) : (
           <Loading></Loading>

@@ -1,10 +1,9 @@
 import React from "react";
-import Contact from "../components/Contact";
 import "./Landing.css";
 import flameBg from "../flameCutout.png";
 import bgVideo from "../bubbles.mp4";
 
-function Landing() {
+function Landing({ screenWidth, breakpoint }) {
   return (
     <main>
       <section className="sectHero">
@@ -27,9 +26,13 @@ function Landing() {
               encourage you to get out and go do! Here is your spark, now ignite
               your inspiration.
             </p>
-            <a className="col-6 my-4 text-center buttonBlog" href="/blog">
-              Explore!
-            </a>
+            {screenWidth < breakpoint ? (
+              ""
+            ) : (
+              <a className="col-6 my-4 text-center buttonBlog" href="/blog">
+                Explore!
+              </a>
+            )}
           </div>
         </section>
 
@@ -49,26 +52,7 @@ function Landing() {
             </p>
           </div>
         </section>
-
-        {/* <section className="sectShop">
-          <div className="ornamentShop">
-            <p className="">SPREAD</p>
-            <p className="">THE WORD</p>
-          </div>
-
-          <div className="col-7 row mx-4">
-            <p className="col-12 descShop">
-              Care to learn how we started? Want to meet the team? Enjoy
-              discovering who we are and what environment we strive to foster.
-            </p>
-            <a className="col-8 mx-4 mb-5 text-center buttonShop" href="/blog">
-              Read Our Story!
-            </a>
-          </div>
-        </section> */}
       </div>
-
-      <Contact></Contact>
     </main>
   );
 }

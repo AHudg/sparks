@@ -2,7 +2,7 @@
 :root {
   font-size: 16px;
   --dusty: rgb(254, 222, 197);
-  --sandstone: rgb(249, 143, 69);
+  --sandstone: rgb(251, 171, 114);
   --vermillion: rgb(196, 66, 26);
   --ember: rgb(107, 32, 0);
   --mist: rgb(153, 207, 205);
@@ -103,22 +103,20 @@ h1 {
 
 .ribbonOne {
   width: 100vw;
-  height: 50vh;
+  height: 20vh;
   position: absolute;
   top: 0;
   left: 100vw;
   background-color: var(--mist);
-  display: inline-block;
 }
 
 .ribbonTwo {
   width: 100vw;
-  height: 50vh;
+  height: 20vh;
   position: absolute;
   top: 20vh;
   left: 100vw;
   background-color: var(--mistAqua);
-  display: inline-block;
 }
 
 .ribbonThree {
@@ -128,7 +126,6 @@ h1 {
   top: 40vh;
   left: 100vw;
   background-color: var(--aqua);
-  display: inline-block;
 }
 
 .ribbonFour {
@@ -138,7 +135,6 @@ h1 {
   top: 60vh;
   left: 100vw;
   background-color: var(--aquaTeal);
-  display: inline-block;
 }
 
 .ribbonFive {
@@ -148,10 +144,13 @@ h1 {
   top: 80vh;
   left: 100vw;
   background-color: var(--teal);
-  display: inline-block;
 }
 
 /* Used to control the hamburger menu animation */
+.menu {
+  display: none;
+}
+
 .themeButtonMobile {
   color: var(--sandstone);
   position: absolute;
@@ -185,11 +184,15 @@ h1 {
 
 .menuWord {
   font-size: 36px;
-  color: var(--sandstone);
+  color: var(--vermillion);
 }
 
 .menuContact {
   font-size: 24px;
+  color: var(--vermillion);
+  z-index: 9;
+  position: absolute;
+  top: 95vh;
 }
 
 @media screen and (min-width: 575px) {

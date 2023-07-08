@@ -1,23 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import Hamburger from "../Hamburger";
 import ThemeContext from "../ThemeContext";
 
-export default function Header() {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const breakpoint = 768;
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
+export default function Header({ screenWidth, breakpoint }) {
   const { theme } = useContext(ThemeContext);
   const { handleTheme } = useContext(ThemeContext);
 
