@@ -1,5 +1,5 @@
 import React from "react";
-import "./Post.css";
+import "./index.css";
 import amber from "../../amberMicroBg.png";
 
 function Post({ title, description, url, postedOn }) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Loading from "./components/Loading/Loading";
+import Loading from "./components/Loading";
 import ThemeContext from "./components/ThemeContext";
 import Header from "./components/Header";
 import Landing from "./pages/Landing";

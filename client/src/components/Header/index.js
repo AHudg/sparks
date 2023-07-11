@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./Header.css";
+import "./index.css";
 import Hamburger from "../Hamburger";
 import ThemeContext from "../ThemeContext";
 

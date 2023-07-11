@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import "../Header/Header.css";
+import "../Header/index.css";
 import { gsap } from "gsap";
 import ThemeContext from "../ThemeContext";
 

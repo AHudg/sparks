@@ -1,5 +1,6 @@
 import React from "react";
 import "./Landing.css";
+import SidebarOne from "../components/Sidebars/sidebarOne";
 import flameBg from "../flameCutout.png";
 import bgVideo from "../bubbles.mp4";
 
@@ -52,6 +53,8 @@ function Landing({ screenWidth, breakpoint }) {
             </p>
           </div>
         </section>
+
+        <SidebarOne></SidebarOne>
       </div>
     </main>
   );
