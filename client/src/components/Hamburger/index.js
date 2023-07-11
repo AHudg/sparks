@@ -6,13 +6,15 @@ import ThemeContext from "../ThemeContext";
 export default function Hamburger() {
   // TODO Bugs present. If double clicked, the animation glitches
   // This causes visual bugs.
+  const [blogStatus, setBlogStatus] = useState("false");
+  const [aboutStatus, setAboutStatus] = useState("false");
+
   const { theme } = useContext(ThemeContext);
   const { handleTheme } = useContext(ThemeContext);
   const { open } = useContext(ThemeContext);
   const { setOpen } = useContext(ThemeContext);
 
-  const [blogStatus, setBlogStatus] = useState("false");
-  const [aboutStatus, setAboutStatus] = useState("false");
+  const initialRender = useRef(true);
 
   const openTl = gsap.timeline();
   const closeTl = gsap.timeline();
@@ -31,9 +33,7 @@ export default function Hamburger() {
         openTl.to(".hamMiddle", { backgroundColor: "rgba( 192, 58, 0, 0" });
         openTl.to(".hamTop", { rotate: 45, y: 10 });
         openTl.to(".hamBottom", { rotate: -45, y: -10 });
-        openTl.to(".menu", { display: "inline-block", opacity: 1 });
       } else {
-        closeTl.to(".menu", { display: "none", opacity: 0 });
         closeTl.to(".ribbonFive", { x: 0 });
         closeTl.to(".ribbonFour", { x: 0 });
         closeTl.to(".ribbonThree", { x: 0 });
@@ -45,8 +45,6 @@ export default function Hamburger() {
       }
     }
   }, [open]);
-
-  const initialRender = useRef(true);
 
   // Controlling the Blog buttons
   useEffect(() => {
@@ -61,21 +59,15 @@ export default function Hamburger() {
         gsap.to(".ribbonOne", { height: "50vh" });
         gsap.to(".leftUp", { y: "30vh" });
         gsap.to(".ribbonTwo", { y: "30vh" });
-        gsap.to(".rightUp", { y: "30vh" });
         gsap.to(".ribbonThree", { y: "30vh" });
-        gsap.to(".leftDown", { y: "30vh" });
         gsap.to(".ribbonFour", { y: "30vh" });
-        gsap.to(".rightDown", { y: "30vh" });
         gsap.to(".ribbonFive", { y: "30vh" });
       } else {
         gsap.to(".ribbonOne", { height: "20vh" });
         gsap.to(".leftUp", { y: 0 });
         gsap.to(".ribbonTwo", { y: 0 });
-        gsap.to(".rightUp", { y: 0 });
         gsap.to(".ribbonThree", { y: 0 });
-        gsap.to(".leftDown", { y: 0 });
         gsap.to(".ribbonFour", { y: 0 });
-        gsap.to(".rightDown", { y: 0 });
         gsap.to(".ribbonFive", { y: 0 });
       }
     }
@@ -93,37 +85,54 @@ export default function Hamburger() {
         gsap.to(".ribbonTwo", { height: "50vh" });
         gsap.to(".rightUp", { y: "30vh" });
         gsap.to(".ribbonThree", { y: "30vh" });
-        gsap.to(".leftDown", { y: "30vh" });
         gsap.to(".ribbonFour", { y: "30vh" });
-        gsap.to(".rightDown", { y: "30vh" });
         gsap.to(".ribbonFive", { y: "30vh" });
       } else {
         gsap.to(".ribbonTwo", { height: "20vh" });
-        gsap.to(".rightUp", { y: "0" });
-        gsap.to(".ribbonThree", { y: "0" });
-        gsap.to(".leftDown", { y: "0" });
-        gsap.to(".ribbonFour", { y: "0" });
-        gsap.to(".rightDown", { y: "0" });
-        gsap.to(".ribbonFive", { y: "0" });
+        gsap.to(".rightUp", { y: 0 });
+        gsap.to(".ribbonThree", { y: 0 });
+        gsap.to(".ribbonFour", { y: 0 });
+        gsap.to(".ribbonFive", { y: 0 });
       }
     }
   }, [aboutStatus]);
 
+  const navArray = [
+    {
+      title: "Contact",
+      href: "/contact",
+      textClass: "contact",
+      divClass: "ribbonFive",
+    },
+    {
+      title: "Donate",
+      href: "/donate",
+      textClass: "rightDown",
+      divClass: "ribbonFour",
+    },
+    {
+      title: "Store",
+      href: "/store",
+      textClass: "leftDown",
+      divClass: "ribbonThree",
+    },
+    {
+      title: "About",
+      href: "/about",
+      textClass: "rightUp",
+      divClass: "ribbonTwo",
+    },
+    {
+      title: "Blog",
+      href: "/blog",
+      textClass: "leftUp",
+      divClass: "ribbonOne",
+    },
+  ];
+
   const handleMenu = () => {
     setOpen(!open);
   };
-
-  const navArray = [
-    { title: "Blog", href: "/blog", local: "leftUp" },
-    { title: "About", href: "/about", local: "rightUp" },
-    { title: "Store", href: "/store", local: "leftDown" },
-    { title: "Donate", href: "/donate", local: "rightDown" },
-  ];
-
-  // Change the background color of the pull down in hamburger
-  // Maybe don't do the About one as a drop down?
-  // I'm not understanding useState very well because I don't need so
-  // many if statements. TODO
 
   const handleNavClick = function (event) {
     const navClick = event.target.innerHTML;
@@ -147,47 +156,27 @@ export default function Hamburger() {
         <span className="hamBottom"></span>
       </div>
 
-      <nav className="hamView">
-        <div className="row">
-          <span className="ribbonOne"></span>
-          <span className="ribbonBlog"></span>
-          <span className="ribbonTwo"></span>
-          <span className="ribbonAbout"></span>
-          <span className="ribbonThree"></span>
-          <span className="ribbonFour"></span>
-          <span className="ribbonFive"></span>
-        </div>
-
-        <div className="menu">
-          <i
-            className={`fa-regular fa-lg fa-${
-              theme === "light" ? "moon" : "sun"
-            } themeButtonMobile`}
-            onClick={handleTheme}
-          ></i>
-
-          <ul className="menuText">
-            {navArray.map((index) => {
-              return (
-                <li key={index.title}>
-                  <a
-                    href={index.href}
-                    className={`menuWord ${index.local}`}
-                    onClick={handleNavClick}
-                  >
-                    {index.title}
-                  </a>
-                </li>
-              );
-            })}
-
-            <li className="col-12">
-              <a href="#contact" className="menuContact">
-                Contact
+      <nav className="menu">
+        {navArray.map((index) => {
+          return (
+            <div className={`${index.divClass}`}>
+              <a
+                href={index.href}
+                onClick={handleNavClick}
+                className={`menuWord ${index.textClass}`}
+              >
+                {index.title}
               </a>
-            </li>
-          </ul>
-        </div>
+            </div>
+          );
+        })}
+
+        <i
+          className={`fa-regular fa-lg fa-${
+            theme === "light" ? "moon" : "sun"
+          } themeButtonMobile`}
+          onClick={handleTheme}
+        ></i>
       </nav>
     </div>
   );

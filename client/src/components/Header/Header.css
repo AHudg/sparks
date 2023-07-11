@@ -13,6 +13,25 @@
   --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
+/* .row {
+  margin-right: 0;
+} */
+
+/* a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+} */
+
 /* Kindling header */
 h1 {
   font-size: 2rem;
@@ -91,7 +110,7 @@ h1 {
   display: inline-block;
 }
 
-.hamView {
+/* .hamView {
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -99,13 +118,23 @@ h1 {
   left: 0;
   overflow-x: hidden;
   z-index: -9;
+} */
+
+/* Used to control the hamburger menu animation */
+.menu {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0vw;
+  top: 0;
+  overflow: hidden;
 }
 
 .ribbonOne {
   width: 100vw;
   height: 20vh;
   position: absolute;
-  top: 0;
+  top: 0vh;
   left: 100vw;
   background-color: var(--mist);
 }
@@ -146,11 +175,6 @@ h1 {
   background-color: var(--teal);
 }
 
-/* Used to control the hamburger menu animation */
-.menu {
-  display: none;
-}
-
 .themeButtonMobile {
   color: var(--sandstone);
   position: absolute;
@@ -166,19 +190,19 @@ h1 {
 
 .rightUp {
   position: absolute;
-  top: 34vh;
+  top: 14vh;
   right: 20px;
 }
 
 .leftDown {
   position: absolute;
-  top: 54vh;
+  top: 14vh;
   left: 20px;
 }
 
 .rightDown {
   position: absolute;
-  top: 74vh;
+  top: 14vh;
   right: 20px;
 }
 
@@ -187,12 +211,10 @@ h1 {
   color: var(--vermillion);
 }
 
-.menuContact {
-  font-size: 24px;
-  color: var(--vermillion);
-  z-index: 9;
+.contact {
   position: absolute;
-  top: 95vh;
+  top: 13vh;
+  left: 20px;
 }
 
 @media screen and (min-width: 575px) {
