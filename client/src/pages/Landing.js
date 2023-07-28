@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Landing.css";
 import SidebarOne from "../components/Sidebars/sidebarOne";
-import flameBg from "../flameCutout.png";
+import SidebarTwo from "../components/Sidebars/sidebarTwo";
+import SidebarThree from "../components/Sidebars/sidebarThree";
+import flame from "../flame.png";
 import bgVideo from "../bubbles.mp4";
+import { gsap } from "gsap";
 
 function Landing({ screenWidth, breakpoint }) {
+  // const [scroll, setScroll] = useState(0);
+
+  // const handleScroll = () => {
+  //   const scrollLocale = window.scrollY;
+  //   setScroll(scrollLocale);
+  //   console.log(scrollLocale);
+  //   if (scrollLocale > 400) {
+  //     gsap.to("twoRibOne", { x: "100px" });
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [scroll]);
+
   return (
     <main>
       <section className="sectHero">
@@ -16,11 +38,11 @@ function Landing({ screenWidth, breakpoint }) {
           <p>IGNITING</p>
           <p>INSPIRATION</p>
         </div>
-        <img src={flameBg} className="flameBg" />
+        <img src={flame} className="flameBg" />
       </section>
 
-      <div className="container">
-        <section className="row text-center sectBlog">
+      <div className={`${screenWidth > breakpoint ? "container" : ""}`}>
+        <section className="row text-center">
           <div className="col-7 row justify-content-center mx-3">
             <p className="col-12 mt-4 coaBlog">
               Cheering you on for your next DIY, we illuminate your interest and
@@ -36,25 +58,18 @@ function Landing({ screenWidth, breakpoint }) {
             )}
           </div>
         </section>
-
-        <section className="mt-5 sectAbout">
-          <div className="ornamentAbout">
-            <p className="">OUR</p>
-            <p className="">STORY</p>
-          </div>
-
-          <div className="row mx-3 py-4 bgAbout">
-            <p className="col-6 my-4 mx-4 descAbout">
-              Care to learn how we started? Enjoy discovering who we are and
-              what environment we strive to foster{" "}
-              <a className="buttonAbout" href="/blog">
-                here.
-              </a>
-            </p>
-          </div>
-        </section>
-
-        <SidebarOne></SidebarOne>
+        <SidebarTwo
+          screenWidth={screenWidth}
+          breakpoint={breakpoint}
+        ></SidebarTwo>
+        <SidebarThree
+          screenWidth={screenWidth}
+          breakpoint={breakpoint}
+        ></SidebarThree>
+        <SidebarOne
+          screenWidth={screenWidth}
+          breakpoint={breakpoint}
+        ></SidebarOne>
       </div>
     </main>
   );

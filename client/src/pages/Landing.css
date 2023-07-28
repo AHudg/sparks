@@ -44,8 +44,8 @@ p {
   position: absolute;
   display: inline;
   right: 0px;
-  bottom: -160px;
-  width: 150px;
+  bottom: -200px;
+  width: 175px;
   padding: 0;
   overflow-x: hidden;
   filter: drop-shadow(-3px 3px 4px var(--dropshadow));
@@ -67,40 +67,6 @@ p {
   background-color: var(--sandstone);
   filter: drop-shadow(0 0 3px var(--dropshadow));
   color: var(--ember);
-}
-
-/* OUR STORY article styling */
-.sectAbout {
-  position: relative;
-}
-
-.bgAbout {
-  background-color: var(--teal);
-  filter: drop-shadow(8px 8px 0px var(--aqua));
-}
-
-.ornamentAbout {
-  writing-mode: vertical-rl;
-  font-size: 4rem;
-  color: var(--mist);
-  filter: drop-shadow(-4px 4px 0px var(--sandstone));
-  font-weight: bold;
-  letter-spacing: 0px;
-  line-height: 0;
-  margin: 20px 0px 20px 0px;
-  position: absolute;
-  right: -12px;
-  top: -10px;
-  z-index: 1;
-}
-
-.descAbout {
-  color: var(--sandstone);
-  font-size: 1.2rem;
-}
-
-.buttonAbout {
-  color: var(--teal);
 }
 
 .arrow {

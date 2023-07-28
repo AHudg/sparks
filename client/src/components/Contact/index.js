@@ -4,7 +4,11 @@ import "./index.css";
 function Contact() {
   return (
     <footer id="contact" className="footerBg">
-      <div className="footerContent row">
+      <p>
+        We're eager to hear from you. Questions, walkthroughs, call us. We have
+        your back.
+      </p>
+      {/* <div className="footerContent row">
         <p className="col-12 col-lg-6 mb-2 contactHeader">Stay Connected!</p>
 
         <div className="col-12 col-lg-6 row justify-content-center">
@@ -52,7 +56,7 @@ function Contact() {
             <button className="col-5 mb-4 btnSubscribe">Subscribe!</button>
           </form>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }

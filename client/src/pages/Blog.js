@@ -95,7 +95,7 @@ function Blog() {
           ></Post>
         ))}
       </main>
-      <Contact></Contact>
+      {/* <Contact></Contact> */}
     </section>
   );
 }

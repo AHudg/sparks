@@ -3,7 +3,7 @@
   --ember: rgb(107, 32, 0);
   --vermillion: rgb(196, 66, 26);
   --sandstone: rgb(249, 143, 69);
-  --dusty: rgb(254, 222, 197);
+  --dusty: rgb(254, 230, 210);
   --mist: rgb(153, 207, 205);
   --aqua: rgb(18, 144, 142);
   --teal: rgb(22, 89, 74);
@@ -41,7 +41,8 @@ ul {
 
 /* themes for light/dark mode */
 .light {
-  background-image: url("./paperBg.png");
+  /* background-image: url("./sandBg.png"); */
+  background-color: var(--dusty);
 }
 
 .dark {

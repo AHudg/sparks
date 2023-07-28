@@ -8,7 +8,7 @@ function About() {
   const [scrollInfo, setScrollInfo] = useState(0);
 
   const handleScroll = () => {
-    const location = window.pageYOffset;
+    const location = window.scrollY;
     setScrollInfo(location);
   };
 
