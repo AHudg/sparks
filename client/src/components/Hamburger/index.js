@@ -25,6 +25,7 @@ export default function Hamburger() {
       initialRender.current = false;
     } else {
       if (open) {
+        openTl.to(".menu", { display: "inline-block" });
         openTl.to(".ribbonFive", { x: "-100vw" });
         openTl.to(".ribbonFour", { x: "-100vw" });
         openTl.to(".ribbonThree", { x: "-100vw" });
@@ -39,6 +40,7 @@ export default function Hamburger() {
         closeTl.to(".ribbonThree", { x: 0 });
         closeTl.to(".ribbonTwo", { x: 0 });
         closeTl.to(".ribbonOne", { x: 0 });
+        closeTl.to(".menu", { display: "none" });
         closeTl.to(".hamTop", { rotate: 0, y: 0 });
         closeTl.to(".hamBottom", { rotate: 0, y: 0 });
         closeTl.to(".hamMiddle", { backgroundColor: "rgba( 192, 58, 0, 1" });
@@ -103,30 +105,35 @@ export default function Hamburger() {
       href: "/contact",
       textClass: "contact",
       divClass: "ribbonFive",
+      expand: false,
     },
     {
       title: "Donate",
       href: "/donate",
       textClass: "rightDown",
       divClass: "ribbonFour",
+      expand: false,
     },
     {
       title: "Store",
       href: "/store",
       textClass: "leftDown",
       divClass: "ribbonThree",
+      expand: false,
     },
     {
       title: "About",
       href: "/about",
       textClass: "rightUp",
       divClass: "ribbonTwo",
+      expand: ["Aboutttt", "me!"],
     },
     {
       title: "Blog",
       href: "/blog",
       textClass: "leftUp",
       divClass: "ribbonOne",
+      expand: ["Gardening", "Upholstery"],
     },
   ];
 
@@ -178,6 +185,41 @@ export default function Hamburger() {
           onClick={handleTheme}
         ></i>
       </nav>
+
+      <div className="hamLinks">
+        <div className="row blogLinks">
+          <a href="/blog" className="col-12 blogA">
+            Best of the Best
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Gardening
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Rate the Wait
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Raccoons
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Outdoor Renovation
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Refurbishing the Interior
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Inspirations
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Good Finds
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Lifting Up Others
+          </a>
+          <a href="/blog" className="col-12 blogA">
+            Another Hyperlink
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

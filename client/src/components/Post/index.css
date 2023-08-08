@@ -11,8 +11,8 @@
 }
 
 .post {
-  height: 450px;
-  border: solid 1px var(--vermillion);
+  margin: auto;
+  position: relative;
 }
 
 .thumbnail {
@@ -21,11 +21,33 @@
 
 .title {
   font-size: 2rem;
-  color: var(--ember);
+  color: var(--aqua);
 }
 
 .postedOn {
-  color: var(--dropshadow);
+  font-size: 0.8rem;
+  color: var(--teal);
+}
+
+.description {
+  height: 50px;
+  overflow-y: hidden;
+}
+
+.viewable {
+  color: black;
+  background-color: var(--mist);
+  width: auto;
+}
+
+.border {
+  height: 5px;
+  width: 65vw;
+  background-color: var(--teal);
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  z-index: -1;
 }
 
 @media screen and (min-width: 575px) {

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import Post from "../components/Post";
-import Contact from "../components/Contact";
 import "./Blog.css";
 import ThemeContext from "../components/ThemeContext";
 
@@ -54,8 +53,8 @@ function Blog() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <section>
-      <div className="container">
+    <section className="blogs">
+      {/* <div className="container">
         <div
           className={`row mt-3 py-3 justify-content-center ${theme}OpaqueBg`}
         >
@@ -83,9 +82,9 @@ function Blog() {
             </optgroup>
           </select>
         </div>
-      </div>
+      </div> */}
 
-      <main>
+      <main className="container">
         {postObj.map((post) => (
           <Post
             title={post.title}
@@ -95,7 +94,6 @@ function Blog() {
           ></Post>
         ))}
       </main>
-      {/* <Contact></Contact> */}
     </section>
   );
 }
