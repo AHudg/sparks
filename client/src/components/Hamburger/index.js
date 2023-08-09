@@ -25,7 +25,6 @@ export default function Hamburger() {
       initialRender.current = false;
     } else {
       if (open) {
-        openTl.to(".menu", { display: "inline-block" });
         openTl.to(".ribbonFive", { x: "-100vw" });
         openTl.to(".ribbonFour", { x: "-100vw" });
         openTl.to(".ribbonThree", { x: "-100vw" });
@@ -40,7 +39,6 @@ export default function Hamburger() {
         closeTl.to(".ribbonThree", { x: 0 });
         closeTl.to(".ribbonTwo", { x: 0 });
         closeTl.to(".ribbonOne", { x: 0 });
-        closeTl.to(".menu", { display: "none" });
         closeTl.to(".hamTop", { rotate: 0, y: 0 });
         closeTl.to(".hamBottom", { rotate: 0, y: 0 });
         closeTl.to(".hamMiddle", { backgroundColor: "rgba( 192, 58, 0, 1" });
@@ -99,44 +97,6 @@ export default function Hamburger() {
     }
   }, [aboutStatus]);
 
-  const navArray = [
-    {
-      title: "Contact",
-      href: "/contact",
-      textClass: "contact",
-      divClass: "ribbonFive",
-      expand: false,
-    },
-    {
-      title: "Donate",
-      href: "/donate",
-      textClass: "rightDown",
-      divClass: "ribbonFour",
-      expand: false,
-    },
-    {
-      title: "Store",
-      href: "/store",
-      textClass: "leftDown",
-      divClass: "ribbonThree",
-      expand: false,
-    },
-    {
-      title: "About",
-      href: "/about",
-      textClass: "rightUp",
-      divClass: "ribbonTwo",
-      expand: ["Aboutttt", "me!"],
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-      textClass: "leftUp",
-      divClass: "ribbonOne",
-      expand: ["Gardening", "Upholstery"],
-    },
-  ];
-
   const handleMenu = () => {
     setOpen(!open);
   };
@@ -164,19 +124,88 @@ export default function Hamburger() {
       </div>
 
       <nav className="menu">
-        {navArray.map((index) => {
-          return (
-            <div className={`${index.divClass}`}>
-              <a
-                href={index.href}
-                onClick={handleNavClick}
-                className={`menuWord ${index.textClass}`}
-              >
-                {index.title}
-              </a>
-            </div>
-          );
-        })}
+        <div className="ribbonOne">
+          <a href="/blog" onClick={handleNavClick} className="menuWord leftUp">
+            Blog
+          </a>
+          <div className="row Links">
+            <a href="/blog" className="col-6 text-center blogAref">
+              Refurbishing the Interior
+            </a>
+            <a href="/blog" className="col-6 text-center blogAref">
+              Outdoor Renovation
+            </a>
+            <a href="/blog" className="col-6 text-center blogAref">
+              Best of the Best
+            </a>
+            <a href="/blog" className="col-6 text-center blogAref">
+              Rate the Wait
+            </a>
+            <a href="/blog" className="col-6 text-center blogAref">
+              Raccoons
+            </a>
+            <a href="/blog" className="col-6 text-center blogAref">
+              Inspirations
+            </a>
+            <a href="/blog" className="col-6 text-center blogAref">
+              Good Finds
+            </a>
+            <a href="/blog" className="col-6 text-center blogAref">
+              Lifting Up Others
+            </a>
+          </div>
+        </div>
+
+        <div className="ribbonTwo">
+          <a
+            href="/about"
+            onClick={handleNavClick}
+            className="menuWord rightUp"
+          >
+            About
+          </a>
+          <div className="row Links">
+            <a href="/blog" className="col-12 text-center aboutAref">
+              Importance of Inspiration
+            </a>
+            <a href="/blog" className="col-12 text-center aboutAref">
+              Who We Are
+            </a>
+            <a href="/blog" className="col-12 text-center aboutAref">
+              How We Started
+            </a>
+          </div>
+        </div>
+
+        <div className="ribbonThree">
+          <a
+            href="/store"
+            onClick={handleNavClick}
+            className="menuWord leftDown"
+          >
+            Store
+          </a>
+        </div>
+
+        <div className="ribbonFour">
+          <a
+            href="/donate"
+            onClick={handleNavClick}
+            className="menuWord rightDown"
+          >
+            Donate
+          </a>
+        </div>
+
+        <div className="ribbonFive">
+          <a
+            href="/contact"
+            onClick={handleNavClick}
+            className="menuWord contact"
+          >
+            Contact
+          </a>
+        </div>
 
         <i
           className={`fa-regular fa-lg fa-${
@@ -185,41 +214,6 @@ export default function Hamburger() {
           onClick={handleTheme}
         ></i>
       </nav>
-
-      <div className="hamLinks">
-        <div className="row blogLinks">
-          <a href="/blog" className="col-12 blogA">
-            Best of the Best
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Gardening
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Rate the Wait
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Raccoons
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Outdoor Renovation
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Refurbishing the Interior
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Inspirations
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Good Finds
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Lifting Up Others
-          </a>
-          <a href="/blog" className="col-12 blogA">
-            Another Hyperlink
-          </a>
-        </div>
-      </div>
     </div>
   );
 }
