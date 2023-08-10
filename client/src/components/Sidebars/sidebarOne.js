@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import colorHands from "../../colorHands.png";
 
 function SidebarOne({ screenWidth, breakpoint }) {
   return (

@@ -15,28 +15,32 @@ function Blog() {
     },
     {
       title: "Second Vlog",
-      description: "This is the description of the second vlog post.",
+      description:
+        "This is the description of the second vlog post. In the second blog, we fill this section with filler so that I can test the view more clickable interactions and debug. I needed something rather long to test.",
       url: "www.youtube.com",
       postedOn: "02-02-2021",
       tags: ["refurbish", "2021"],
     },
     {
       title: "Third Vlog",
-      description: "This is the description of the third vlog post.",
+      description:
+        "This is the description of the third vlog post. In the third blog, we test a shorter description.",
       url: "www.youtube.com",
       postedOn: "03-03-2023",
       tags: ["upholster", "2023"],
     },
     {
       title: "Fourth Vlog",
-      description: "This is the description of the fourth vlog post.",
+      description:
+        "This is the description of the fourth vlog post. In the fourth blog, I'm already tired of typing.",
       url: "www.youtube.com",
       postedOn: "01-01-2023",
       tags: ["garden", "2023"],
     },
     {
       title: "Fifth Vlog",
-      description: "This is the description of the fifth vlog post.",
+      description:
+        "This is the description of the fifth vlog post. In the fifth blog, I decided to do another long blog post. I really enjoy all the interaction we are having on this website. I'm very proud. I need to continue full steam ahead on this project. And to make this a lengthy description.",
       url: "www.youtube.com",
       postedOn: "02-02-2023",
       tags: ["garden", "2023"],
@@ -85,12 +89,13 @@ function Blog() {
       </div> */}
 
       <main className="container">
-        {postObj.map((post) => (
+        {postObj.map((post, i) => (
           <Post
             title={post.title}
             description={post.description}
             url={post.url}
             postedOn={post.postedOn}
+            iterator={i}
           ></Post>
         ))}
       </main>

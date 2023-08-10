@@ -41,36 +41,36 @@ function Landing({ screenWidth, breakpoint }) {
         <img src={flame} className="flameBg" />
       </section>
 
-      <div className={`${screenWidth > breakpoint ? "container" : ""}`}>
-        <section className="row text-center">
-          <div className="col-7 row justify-content-center mx-3">
-            <p className="col-12 mt-4 coaBlog">
-              Cheering you on for your next DIY, we illuminate your interest and
-              encourage you to get out and go do! Here is your spark, now ignite
-              your inspiration.
-            </p>
-            {screenWidth < breakpoint ? (
-              ""
-            ) : (
-              <a className="col-6 my-4 text-center buttonBlog" href="/blog">
-                Explore!
-              </a>
-            )}
-          </div>
-        </section>
-        <SidebarTwo
-          screenWidth={screenWidth}
-          breakpoint={breakpoint}
-        ></SidebarTwo>
-        <SidebarThree
-          screenWidth={screenWidth}
-          breakpoint={breakpoint}
-        ></SidebarThree>
-        <SidebarOne
-          screenWidth={screenWidth}
-          breakpoint={breakpoint}
-        ></SidebarOne>
-      </div>
+      <section
+        className={`${
+          screenWidth > breakpoint
+            ? "container row text-center"
+            : "row text-center"
+        }`}
+      >
+        <div className="col-7 row justify-content-center mx-3">
+          <p className="col-12 mt-4 coaBlog">
+            Cheering you on for your next DIY, we illuminate your interest and
+            encourage you to get out and go do! Here is your spark, now ignite
+            your inspiration.
+          </p>
+          <a className="col-6 my-4 text-center buttonBlog" href="/blog">
+            Explore!
+          </a>
+        </div>
+      </section>
+      <SidebarTwo
+        screenWidth={screenWidth}
+        breakpoint={breakpoint}
+      ></SidebarTwo>
+      <SidebarThree
+        screenWidth={screenWidth}
+        breakpoint={breakpoint}
+      ></SidebarThree>
+      <SidebarOne
+        screenWidth={screenWidth}
+        breakpoint={breakpoint}
+      ></SidebarOne>
     </main>
   );
 }

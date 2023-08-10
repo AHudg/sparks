@@ -17,10 +17,8 @@
 }
 
 .video {
-  /* position: absolute; */
   margin: auto;
   display: block;
-  /* margin: solid 10px var(--ember); */
 }
 
 .ornament {
@@ -36,8 +34,9 @@
 /* Sidebar Two styling */
 .sectAbout {
   height: 80vh;
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
+  z-index: -99;
 }
 
 .twoRibOne {
@@ -48,6 +47,12 @@
   left: -50vw;
   z-index: -1;
   border-right: solid 5px var(--dusty);
+}
+
+.sideCarousel {
+  position: absolute;
+  width: 50vw;
+  height: 40vh;
 }
 
 .twoRibTwo {
@@ -70,15 +75,28 @@
   border-top: solid 5px var(--dusty);
 }
 
-.ornamentAbout {
+.topOrnament {
   writing-mode: vertical-rl;
   font-size: 4rem;
-  color: var(--dusty);
-  /* filter: drop-shadow(-4px 4px 0px var(--dusty)); */
+  color: var(--mist);
+  filter: drop-shadow(-4px 4px 0px var(--dusty));
   font-weight: bold;
   line-height: 0px;
   position: absolute;
   right: -10px;
+  top: 20px;
+  z-index: 1;
+}
+
+.bottomOrnament {
+  writing-mode: vertical-rl;
+  font-size: 4rem;
+  color: var(--mist);
+  filter: drop-shadow(-4px 4px 0px var(--dusty));
+  font-weight: bold;
+  line-height: 0px;
+  position: absolute;
+  right: 50px;
   top: 20px;
   z-index: 1;
 }
@@ -129,4 +147,9 @@
   left: -100vw;
   z-index: -1;
   border-top: solid 5px var(--dusty);
+}
+
+.emphasized {
+  font-weight: bold;
+  color: var(--mist);
 }
