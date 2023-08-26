@@ -146,11 +146,11 @@ h1 {
 }
 
 .themeButtonMobile {
-  color: var(--sandstone);
+  color: var(--vermillion);
   position: absolute;
-  top: 10px;
-  left: 25px;
-  opacity: 0;
+  top: 20px;
+  left: 20px;
+  opacity: 1;
 }
 
 .menuWord {
@@ -221,12 +221,3 @@ h1 {
 
 @media screen and (min-width: 1400px) {
 }
-
-/* TODO background image disappeared but want to change anyways */
-/* .menuBg {
-  height: 50vh;
-  position: absolute;
-  bottom: 0vh;
-  left: 20px;
-  filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.5));
-} */

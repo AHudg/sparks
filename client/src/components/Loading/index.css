@@ -1,0 +1,38 @@
+:root {
+  --ember: rgb(107, 32, 0);
+  --vermillion: rgb(196, 66, 26);
+  --sandstone: rgb(249, 143, 69);
+  --dusty: rgb(254, 222, 197);
+  --mist: rgb(153, 207, 205);
+  --aqua: rgb(18, 144, 142);
+  --teal: rgb(22, 89, 74);
+  --dropshadow: rgba(0, 0, 0, 0.5);
+}
+
+.loadContainer {
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dusty);
+}
+
+.loadImage {
+  position: absolute;
+  width: 70vw;
+  top: 30vh;
+  left: 15vw;
+}
+
+.rotate {
+  animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

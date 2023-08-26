@@ -10,79 +10,19 @@
   --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
-.footerBg {
-  height: 80vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
+.footer {
+  font-size: 12px;
 }
 
-.footerContent {
-  height: 80%;
-  position: absolute;
-  bottom: 0;
-}
-
-.social {
-  color: var(--dusty);
-}
-
-.social:hover {
-  color: var(--vermillion);
-}
-
-.contactHeader {
-  font-size: 1.5rem;
-  color: var(--mist);
-  font-weight: bold;
-  filter: drop-shadow(0 0 2px var(--dropshadow));
-}
-
-.contactText {
-  margin: 0 20px;
-}
-
-.contactWord {
-  color: var(--dusty);
-}
-
-.contactWord:hover {
-  color: var(--sandstone);
-}
-
-.contactCOA {
-  color: var(--dusty);
-  font-size: 1.25rem;
-  filter: drop-shadow(0 0 2px var(--dropshadow));
-  margin: 0;
-}
-
-.input {
-  margin-top: 0;
-}
-
-.email {
-  border-radius: 10px;
-  border: solid 1px var(--teal);
-  background-color: var(--dusty);
-  color: var(--teal);
-}
-
-.btnSubscribe {
-  border-radius: 20px;
-  background-color: var(--mist);
-  color: var(--teal);
+.footerBtn {
   border: none;
-  filter: drop-shadow(0 0 3px var(--dropshadow));
+  background-color: var(--dusty);
 }
 
 @media screen and (min-width: 768px) {
 }
 
 @media screen and (min-width: 992px) {
-  .footerContent {
-    height: 20vh;
-  }
 }
 
 @media screen and (min-width: 1200px) {

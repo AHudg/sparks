@@ -8,6 +8,7 @@ import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -76,11 +77,11 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/donate" element={<Blog />} />
-              <Route path="/contact" element={<Blog />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
 
             <footer>
-              <Contact></Contact>
+              <Footer></Footer>
             </footer>
           </div>
         ) : (

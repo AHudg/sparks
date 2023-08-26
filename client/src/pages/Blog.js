@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Post from "../components/Post";
 import "./Blog.css";
 import ThemeContext from "../components/ThemeContext";
+import { gsap } from "gsap";
 
 function Blog() {
   const postObj = [
@@ -55,7 +56,6 @@ function Blog() {
   ];
 
   const { theme } = useContext(ThemeContext);
-
   return (
     <section className="blogs">
       {/* <div className="container">

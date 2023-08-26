@@ -5,7 +5,6 @@ import SidebarTwo from "../components/Sidebars/sidebarTwo";
 import SidebarThree from "../components/Sidebars/sidebarThree";
 import flame from "../flame.png";
 import bgVideo from "../bubbles.mp4";
-import { gsap } from "gsap";
 
 function Landing({ screenWidth, breakpoint }) {
   // const [scroll, setScroll] = useState(0);

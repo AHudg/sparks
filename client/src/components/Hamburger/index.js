@@ -125,6 +125,12 @@ export default function Hamburger() {
 
       <nav className="menu">
         <div className="ribbonOne">
+          <i
+            className={`fa-regular fa-lg fa-${
+              theme === "light" ? "moon" : "sun"
+            } themeButtonMobile`}
+            onClick={handleTheme}
+          ></i>
           <a href="/blog" onClick={handleNavClick} className="menuWord leftUp">
             Blog
           </a>
@@ -206,13 +212,6 @@ export default function Hamburger() {
             Contact
           </a>
         </div>
-
-        <i
-          className={`fa-regular fa-lg fa-${
-            theme === "light" ? "moon" : "sun"
-          } themeButtonMobile`}
-          onClick={handleTheme}
-        ></i>
       </nav>
     </div>
   );
