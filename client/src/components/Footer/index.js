@@ -1,4 +1,6 @@
 import React from "react";
+import Terms from "../Modal/Terms";
+import Privacy from "../Modal/Privacy";
 
 function Footer() {
   function handleContact(event) {
@@ -11,17 +13,11 @@ function Footer() {
   }
 
   return (
-    <footer className="row text-center">
-      <p className="footer">
-        © 2023 Kindling by J.{" "}
-        <button onClick={handleContact} className="footerBtn">
-          Terms of Service
-        </button>{" "}
-        <button onClick={handleContact} className="footerBtn">
-          Privacy Policy
-        </button>
-      </p>
-    </footer>
+    <div>
+      <p className="footer">© 2023 Kindling by J. </p>
+      <Terms />
+      <Privacy />
+    </div>
   );
 }
 

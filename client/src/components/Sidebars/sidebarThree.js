@@ -5,7 +5,7 @@ import Jalene from "../../Jalene.png";
 import Andrew from "../../Andrew.png";
 import Andrew2 from "../../Andrew2.png";
 
-function SidebarTwo({ screenWidth, breakpoint }) {
+function SidebarThree({ screenWidth, breakpoint }) {
   const [scroll, setScroll] = useState(0);
 
   const handleScroll = () => {
@@ -32,37 +32,43 @@ function SidebarTwo({ screenWidth, breakpoint }) {
       <div className="threeRibOne">
         <div
           id="carouselExampleControls"
-          class="carousel slide sideCarousel"
+          className="carousel slide sideCarousel"
           data-ride="carousel"
         >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src={Jalene} alt="First slide" />
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img className="d-block w-100" src={Jalene} alt="First slide" />
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src={Andrew} alt="Second slide" />
+            <div className="carousel-item">
+              <img className="d-block w-100" src={Andrew} alt="Second slide" />
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src={Andrew2} alt="Third slide" />
+            <div className="carousel-item">
+              <img className="d-block w-100" src={Andrew2} alt="Third slide" />
             </div>
           </div>
           <a
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             href="#carouselExampleControls"
             role="button"
             data-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Previous</span>
           </a>
           <a
-            class="carousel-control-next"
+            className="carousel-control-next"
             href="#carouselExampleControls"
             role="button"
             data-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Next</span>
           </a>
         </div>
       </div>
@@ -84,4 +90,4 @@ function SidebarTwo({ screenWidth, breakpoint }) {
   );
 }
 
-export default SidebarTwo;
+export default SidebarThree;

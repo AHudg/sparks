@@ -32,18 +32,18 @@ function SidebarTwo({ screenWidth, breakpoint }) {
       <div className="twoRibOne">
         <div
           id="carouselExampleSlidesOnly"
-          class="carousel slide"
+          className="carousel slide"
           data-ride="carousel"
         >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src={hatTip} alt="First slide" />
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img className="d-block w-100" src={hatTip} alt="First slide" />
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src={sitting} alt="Second slide" />
+            <div className="carousel-item">
+              <img className="d-block w-100" src={sitting} alt="Second slide" />
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src={upClose} alt="Third slide" />
+            <div className="carousel-item">
+              <img className="d-block w-100" src={upClose} alt="Third slide" />
             </div>
           </div>
         </div>
