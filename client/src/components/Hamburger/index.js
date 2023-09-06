@@ -53,7 +53,7 @@ export default function Hamburger() {
     }
 
     if (initialRender.current) {
-      initialRender.current = false;
+      // initialRender.current = false;
     } else {
       if (!blogStatus) {
         gsap.to(".ribbonOne", { height: "50vh" });
@@ -79,7 +79,7 @@ export default function Hamburger() {
     }
 
     if (initialRender.current) {
-      initialRender.current = false;
+      // initialRender.current = false;
     } else {
       if (!aboutStatus) {
         gsap.to(".ribbonTwo", { height: "50vh" });

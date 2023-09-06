@@ -7,15 +7,18 @@ import {
   MDBModalHeader,
   MDBModalTitle,
   MDBModalBody,
-  MDBModalFooter,
 } from "mdb-react-ui-kit";
+import "./index.css";
 
 export default function Terms() {
   const [scrollableModal, setScrollableModal] = useState(false);
 
   return (
-    <div>
-      <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>
+    <div className="row">
+      <MDBBtn
+        onClick={() => setScrollableModal(!scrollableModal)}
+        className="footerBtn col-6"
+      >
         Terms of Service
       </MDBBtn>
 
@@ -50,7 +53,7 @@ export default function Terms() {
                 to all visitors, users, and others who wish to access or use the
                 Website.
               </p>
-              <ul>
+              <ul className="list">
                 <li>
                   <span className="boldText">Acceptance of Terms</span>
                   <p>
@@ -200,14 +203,6 @@ export default function Terms() {
                 consult with a legal professional.
               </p>
             </MDBModalBody>
-            <MDBModalFooter>
-              <MDBBtn
-                color="secondary"
-                onClick={() => setScrollableModal(!setScrollableModal)}
-              >
-                Close
-              </MDBBtn>
-            </MDBModalFooter>
           </MDBModalContent>
         </MDBModalDialog>
       </MDBModal>

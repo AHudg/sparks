@@ -8,7 +8,8 @@ import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Terms from "./components/Modal/Terms";
+import Privacy from "./components/Modal/Privacy";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -78,10 +79,13 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/donate" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<h1>Oops! No content here!</h1>} />
             </Routes>
 
-            <footer>
-              <Footer></Footer>
+            <footer className="row text-center">
+              <p className="footer col-12">© 2023 Kindling by J. </p>
+              <Terms />
+              <Privacy />
             </footer>
           </div>
         ) : (

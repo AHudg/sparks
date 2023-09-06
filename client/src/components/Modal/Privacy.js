@@ -7,7 +7,6 @@ import {
   MDBModalHeader,
   MDBModalTitle,
   MDBModalBody,
-  MDBModalFooter,
 } from "mdb-react-ui-kit";
 import "./index.css";
 
@@ -15,8 +14,11 @@ export default function Privacy() {
   const [scrollableModal, setScrollableModal] = useState(false);
 
   return (
-    <div>
-      <MDBBtn onClick={() => setScrollableModal(!scrollableModal)}>
+    <div className="row">
+      <MDBBtn
+        onClick={() => setScrollableModal(!scrollableModal)}
+        className="footerBtn col-6"
+      >
         Privacy Policy
       </MDBBtn>
 
@@ -44,7 +46,7 @@ export default function Privacy() {
                 policy.
               </p>
               <br />
-              <ol>
+              <ol className="list">
                 <li>
                   <span className="boldText">
                     Information We Collect Personal Information:

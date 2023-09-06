@@ -10,15 +10,6 @@
   --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
-.footer {
-  font-size: 12px;
-}
-
-.footerBtn {
-  border: none;
-  background-color: var(--dusty);
-}
-
 @media screen and (min-width: 768px) {
 }
 

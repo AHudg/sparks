@@ -52,6 +52,17 @@ ul {
   background-color: var(--teal);
 }
 
+.footer {
+  font-size: 12px;
+}
+
+.footerBtn {
+  background-color: var(--dusty);
+  border: none;
+  color: black;
+  font-size: 12px;
+}
+
 @media screen and (min-width: 575px) {
   .slogan {
     font-size: 5rem;
