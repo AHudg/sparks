@@ -12,6 +12,7 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  cache: "bounded",
 });
 
 // boilerplate: parses incoming JSON reqs and puts it in req.body
