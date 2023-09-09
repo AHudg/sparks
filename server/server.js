@@ -8,6 +8,12 @@ import path from "path";
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+// Create a new instance of the Apollo server
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
 // boilerplate: parses incoming JSON reqs and puts it in req.body
 app.use(express.json());
 // boilerplate: URL-encoded data will be parsed w/ qs lib allowing nested objs from query strings
@@ -21,17 +27,17 @@ app.use(express.urlencoded({ extended: true }));
 // }
 
 // wildcard GET route- if a location is requested that doesn't have explicit route defined, respond w/ the production-ready REACT code
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
+
+app.get("/", (req, res) => {
+  res.json({
+    msg: "Welcome to GraphQL",
+  });
 });
 
 async function startApolloServer() {
-  // Create a new instance of the Apollo server
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-  });
-
   await server.start();
   server.applyMiddleware({ app });
 
