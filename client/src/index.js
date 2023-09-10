@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import * as ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import App from "./App";
@@ -13,14 +13,12 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// Construct our main GraphQL API endpoint
-const httpLink = createHttpLink({
-  uri: "/graphql",
-});
-
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: httpLink,
+  link: createHttpLink({
+    // Construct our main GraphQL API endpoint
+    uri: "http://localhost:3001/graphql",
+  }),
   cache: new InMemoryCache(),
 });
 

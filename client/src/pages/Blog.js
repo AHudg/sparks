@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ThemeContext from "../components/ThemeContext";
 import "./Blog.css";
 import Hero from "../components/Hero";
+import Loading from "../components/Loading";
 
 import Post from "../components/Post";
 import { useQuery } from "@apollo/client";
@@ -88,13 +89,13 @@ function Blog() {
 
   const { loading, error, data } = useQuery(QUERY_ALLPOST);
   if (loading) {
-    console.log("...loading");
+    return <Loading></Loading>;
   }
   if (error) {
     console.log("error: " + error.message);
   }
 
-  console.log("data: " + data);
+  console.log(data);
 
   return (
     <section>
@@ -129,7 +130,7 @@ function Blog() {
       </div>
 
       <main className="container">
-        {postObj.map((post, i) => (
+        {data.allPost.map((post, i) => (
           <Post
             title={post.title}
             description={post.description}

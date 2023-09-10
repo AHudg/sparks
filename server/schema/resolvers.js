@@ -1,5 +1,4 @@
 import { Post } from "../models/Post.js";
-import { AuthenticationError } from "apollo-server-express";
 
 export const resolvers = {
   Query: {
