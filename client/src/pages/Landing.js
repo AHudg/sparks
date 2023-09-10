@@ -37,22 +37,23 @@ function Landing({ screenWidth, breakpoint }) {
         firstLine="IGNITING"
         secondLine="INSPIRATION"
         accent={flame}
+        accentClass="flame"
       />
 
       <section
-        className={`${
-          screenWidth > breakpoint
-            ? "container row text-center"
-            : "row text-center"
-        }`}
+      // className={`${
+      //   screenWidth > breakpoint
+      //     ? "container row text-center"
+      //     : "row text-center"
+      // }`}
       >
-        <div className="col-7 row justify-content-center mx-3">
-          <p className="col-12 mt-4 coaBlog">
+        <div className="row justify-content-center">
+          <p className="col-11 mt-4 text-center coaBlog">
             Cheering you on for your next DIY, we illuminate your interest and
             encourage you to get out and go do! Here is your spark, now ignite
             your inspiration.
           </p>
-          <a className="col-6 my-4 text-center buttonBlog" href="/blog">
+          <a className="col-6 mt-4 text-center buttonBlog" href="/blog">
             Explore!
           </a>
         </div>

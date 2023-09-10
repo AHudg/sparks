@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 
-function Hero({ media, src, firstLine, secondLine, accent }) {
+function Hero({ media, src, firstLine, secondLine, accent, accentClass }) {
   return (
     <section className="sectHero">
       {media === "video" ? (
@@ -16,7 +16,7 @@ function Hero({ media, src, firstLine, secondLine, accent }) {
         <p>{firstLine}</p>
         <p>{secondLine}</p>
       </div>
-      <img src={accent} className="accentHero" />
+      <img src={accent} className={accentClass} />
     </section>
   );
 }

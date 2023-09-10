@@ -1,7 +1,9 @@
 import db from "./config/connection.js";
 import express from "express";
+
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema/index.js";
+
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -15,7 +17,7 @@ const __dirname = fileURLToPath(import.meta.url);
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  // cache: "bounded",
+  cache: "bounded",
 });
 
 // boilerplate: parses incoming JSON reqs and puts it in req.body

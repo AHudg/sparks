@@ -12,7 +12,7 @@ function SidebarTwo({ screenWidth, breakpoint }) {
     const scrollLocale = window.scrollY;
     setScroll(scrollLocale);
     console.log(scrollLocale);
-    if (scrollLocale > 400) {
+    if (scrollLocale > 200) {
       gsap.to(".twoRibOne", { x: "50vw" });
       gsap.to(".twoRibTwo", { x: "-50vw" });
       gsap.to(".twoRibThree", { x: "100vw" });
