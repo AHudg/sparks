@@ -8,12 +8,18 @@
   --aqua: rgb(18, 144, 142);
   --teal: rgb(22, 89, 74);
   --dropshadow: rgba(0, 0, 0, 0.5);
+  --accent: "AccountantSignature";
+}
+
+@font-face {
+  font-family: "AccountantSignature";
+  src: url("./AccountantSignature.otf");
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: "futura", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

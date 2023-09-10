@@ -12,13 +12,21 @@
 
 .lightOpaqueBg {
   background-color: var(--mist);
+  position: relative;
 }
 
 .darkOpaqueBg {
   background-color: rgba(146, 197, 184, 0.5);
+  position: relative;
+}
+
+div > .searchEmblem {
+  position: relative;
 }
 
 .searchEmblem {
+  position: absolute;
+  right: 0;
   color: var(--ember);
 }
 
@@ -34,4 +42,10 @@
   border-radius: 10px;
   background-color: var(--dusty);
   color: var(--ember);
+}
+
+.filterLabel {
+  position: absolute;
+  top: 0;
+  right: 10vw;
 }

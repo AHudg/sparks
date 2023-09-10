@@ -1,7 +1,7 @@
+import db from "./config/connection.js";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema/index.js";
-import db from "./config/connection.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -15,7 +15,7 @@ const __dirname = fileURLToPath(import.meta.url);
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  cache: "bounded",
+  // cache: "bounded",
 });
 
 // boilerplate: parses incoming JSON reqs and puts it in req.body
@@ -35,10 +35,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../../client/public/", "index.html"));
 });
 
-app.get("/", (req, res) => {
-  res.json("I do not know.");
-});
-
 async function startApolloServer() {
   await server.start();
   server.applyMiddleware({ app });
@@ -47,11 +43,11 @@ async function startApolloServer() {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(
-        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath} or see what the server is serving at http://localhost:${PORT}`
       );
     });
   });
 }
 
 // Call the async function to start the server
-startApolloServer(typeDefs, resolvers);
+startApolloServer();

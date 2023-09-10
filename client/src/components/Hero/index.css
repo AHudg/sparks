@@ -1,0 +1,39 @@
+/* Video Section / Intro Styling */
+.sectHero {
+  position: relative;
+  z-index: 9;
+}
+
+.mediaHero {
+  width: 100vw;
+  /* TODO max-height so it doesn't take up the whole thing and has respect to the words */
+  max-height: 70vh;
+  padding: 0;
+  border-top: 5px solid var(--vermillion);
+  border-bottom: 5px solid var(--vermillion);
+}
+
+.ornamentHero {
+  font-size: 3rem;
+  color: var(--sandstone);
+  filter: drop-shadow(-4px 4px 0px var(--teal));
+  font-weight: bold;
+  line-height: 80%;
+  letter-spacing: 0px;
+  z-index: 1;
+  position: relative;
+  bottom: 2rem;
+  left: 10px;
+  width: 95vw;
+}
+
+.accentHero {
+  position: absolute;
+  display: inline;
+  right: 10px;
+  top: 60vh;
+  width: 175px;
+  padding: 0;
+  overflow-x: hidden;
+  filter: drop-shadow(-3px 3px 4px var(--dropshadow));
+}

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Landing.css";
+
+import Hero from "../components/Hero";
 import SidebarOne from "../components/Sidebars/sidebarOne";
 import SidebarTwo from "../components/Sidebars/sidebarTwo";
 import SidebarThree from "../components/Sidebars/sidebarThree";
+
 import flame from "../flame.png";
 import bgVideo from "../bubbles.mp4";
 
@@ -28,17 +31,13 @@ function Landing({ screenWidth, breakpoint }) {
 
   return (
     <main>
-      <section className="sectHero">
-        <video autoPlay loop muted className="videoHero">
-          <source src={bgVideo} type="video/mp4" />
-          We're sorry. This video is not supported in your browser.
-        </video>
-        <div className="ornamentHero">
-          <p>IGNITING</p>
-          <p>INSPIRATION</p>
-        </div>
-        <img src={flame} className="flameBg" />
-      </section>
+      <Hero
+        media="video"
+        src={bgVideo}
+        firstLine="IGNITING"
+        secondLine="INSPIRATION"
+        accent={flame}
+      />
 
       <section
         className={`${

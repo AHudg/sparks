@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import "../Header/index.css";
 import { gsap } from "gsap";
 import ThemeContext from "../ThemeContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Hamburger() {
   // TODO Bugs present. If double clicked, the animation glitches
@@ -15,6 +16,8 @@ export default function Hamburger() {
   const { setOpen } = useContext(ThemeContext);
 
   const initialRender = useRef(true);
+
+  const navigate = useNavigate();
 
   const openTl = gsap.timeline();
   const closeTl = gsap.timeline();
@@ -115,6 +118,11 @@ export default function Hamburger() {
     }
   };
 
+  const navigateSelections = (e) => {
+    console.dir(e.target.dataset.tag);
+    navigate(`/blog/${e.target.dataset.tag}`);
+  };
+
   return (
     <div className="col-8">
       <div className="hamBorder" onClick={handleMenu}>
@@ -135,28 +143,60 @@ export default function Hamburger() {
             Blog
           </a>
           <div className="row Links">
-            <a href="/blog" className="col-6 text-center blogAref">
+            <a
+              className="col-6 text-center blogAref"
+              onClick={navigateSelections}
+              data-tag="interior"
+            >
               Refurbishing the Interior
             </a>
-            <a href="/blog" className="col-6 text-center blogAref">
+            <a
+              className="col-6 text-center blogAref"
+              onClick={navigateSelections}
+              data-tag="outdoor"
+            >
               Outdoor Renovation
             </a>
-            <a href="/blog" className="col-6 text-center blogAref">
+            <a
+              className="col-6 text-center blogAref"
+              onClick={navigateSelections}
+              data-tag="best"
+            >
               Best of the Best
             </a>
-            <a href="/blog" className="col-6 text-center blogAref">
+            <a
+              className="col-6 text-center blogAref"
+              onClick={navigateSelections}
+              data-tag="rate"
+            >
               Rate the Wait
             </a>
-            <a href="/blog" className="col-6 text-center blogAref">
+            <a
+              className="col-6 text-center blogAref"
+              onClick={navigateSelections}
+              data-tag="raccoons"
+            >
               Raccoons
             </a>
-            <a href="/blog" className="col-6 text-center blogAref">
+            <a
+              className="col-6 text-center blogAref"
+              onClick={navigateSelections}
+              data-tag="inspiration"
+            >
               Inspirations
             </a>
-            <a href="/blog" className="col-6 text-center blogAref">
+            <a
+              className="col-6 text-center blogAref"
+              onClick={navigateSelections}
+              data-tag="finds"
+            >
               Good Finds
             </a>
-            <a href="/blog" className="col-6 text-center blogAref">
+            <a
+              className="col-6 text-center blogAref"
+              onClick={navigateSelections}
+              data-tag="lifting"
+            >
               Lifting Up Others
             </a>
           </div>

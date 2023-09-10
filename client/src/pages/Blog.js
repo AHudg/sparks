@@ -1,8 +1,14 @@
 import React, { useContext } from "react";
-import Post from "../components/Post";
-import "./Blog.css";
 import ThemeContext from "../components/ThemeContext";
-import { gsap } from "gsap";
+import "./Blog.css";
+import Hero from "../components/Hero";
+
+import Post from "../components/Post";
+import { useQuery } from "@apollo/client";
+import { QUERY_ALLPOST } from "../utils/queries";
+
+import handFan from "../handFan.png";
+import bgVideo from "../bubbles.mp4";
 
 function Blog() {
   const postObj = [
@@ -55,38 +61,72 @@ function Blog() {
     },
   ];
 
-  const { theme } = useContext(ThemeContext);
-  return (
-    <section className="blogs">
-      {/* <div className="container">
-        <div
-          className={`row mt-3 py-3 justify-content-center ${theme}OpaqueBg`}
-        >
-          <div className="col-6 row justify-content-between align-items-center">
-            <i className="col-3 col-md-2 text-end fa-solid fa-magnifying-glass searchEmblem"></i>
-            <input
-              className="col-9 col-md-10 searchBar"
-              placeholder="Search..."
-            ></input>
-          </div>
+  const optionObj = [
+    {
+      tagName: "raccoon",
+      displayName: "Raccoons",
+    },
+    {
+      tagName: "refurbish",
+      displayName: "Refurbishing",
+    },
+    {
+      tagName: "upholster",
+      displayName: "Re-Upholsterin",
+    },
+    {
+      tagName: "garden",
+      displayName: "Gardening",
+    },
+    {
+      tagName: "exercise",
+      displayName: "Exercise",
+    },
+  ];
 
-          <select className="col-4 filterBar">
-            <option>Filter</option>
+  const { theme } = useContext(ThemeContext);
+
+  const { loading, error, data } = useQuery(QUERY_ALLPOST);
+  if (loading) {
+    console.log("...loading");
+  }
+  if (error) {
+    console.log("error: " + error.message);
+  }
+
+  console.log("data: " + data);
+
+  return (
+    <section>
+      <Hero
+        media="video"
+        src={bgVideo}
+        firstLine="MOST"
+        secondLine="RECENT"
+        accent={handFan}
+      />
+
+      <div className={`py-3 justify-content-center ${theme}OpaqueBg`}>
+        <div className="col-6 row justify-content-between align-items-center">
+          <i className="fa-solid fa-magnifying-glass searchEmblem"></i>
+          <input
+            className="col-9 col-md-10 searchBar"
+            placeholder="Search..."
+          ></input>
+        </div>
+
+        <div className="col-4">
+          <span className="filterLabel">Filter:</span>
+          <select className="filterBar">
+            <option>None</option>
             <optgroup label="Categories">
-              <option value="raccoon">Raccoons</option>
-              <option value="refurbish">Refurbishing</option>
-              <option value="upholster">Re-Upholstering</option>
-              <option value="garden">Gardening</option>
-              <option value="exercise">Exercise</option>
-            </optgroup>
-            <optgroup label="Years">
-              <option value="2021">2021</option>
-              <option value="2022">2022</option>
-              <option value="2023">2023</option>
+              {optionObj.map((option) => (
+                <option value={option.tagName}>{option.displayName}</option>
+              ))}
             </optgroup>
           </select>
         </div>
-      </div> */}
+      </div>
 
       <main className="container">
         {postObj.map((post, i) => (
