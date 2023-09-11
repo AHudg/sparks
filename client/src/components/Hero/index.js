@@ -1,7 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 
-function Hero({ media, src, firstLine, secondLine, accent, accentClass }) {
+function Hero({
+  media,
+  src,
+  firstLine,
+  secondLine,
+  orientation,
+  accentClass,
+  accent,
+}) {
+  console.log(
+    media,
+    src,
+    firstLine,
+    secondLine,
+    accent,
+    accentClass,
+    orientation
+  );
   return (
     <section className="sectHero">
       {media === "video" ? (
@@ -12,7 +29,7 @@ function Hero({ media, src, firstLine, secondLine, accent, accentClass }) {
       ) : (
         <img src={src} className="mediaHero"></img>
       )}
-      <div className="ornamentHero">
+      <div className={orientation}>
         <p>{firstLine}</p>
         <p>{secondLine}</p>
       </div>

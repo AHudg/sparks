@@ -36,8 +36,9 @@ function Landing({ screenWidth, breakpoint }) {
         src={bgVideo}
         firstLine="IGNITING"
         secondLine="INSPIRATION"
-        accent={flame}
+        orientation="ornamentHero ornamentRight"
         accentClass="flame"
+        accent={flame}
       />
 
       <section

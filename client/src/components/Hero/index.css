@@ -22,16 +22,18 @@
   letter-spacing: 0px;
   z-index: 1;
   position: relative;
-  text-align: end;
   bottom: 1.5rem;
   right: -10px;
   width: 95vw;
 }
 
+.ornamentRight {
+  text-align: end;
+}
+
 .flame {
   position: absolute;
   display: inline;
-  /* right: 0px; */
   bottom: -20px;
   width: 150px;
   padding: 0;
@@ -42,8 +44,8 @@
 .hands {
   position: absolute;
   display: inline;
-  right: 10px;
-  top: 60vh;
+  right: 0px;
+  bottom: -40px;
   width: 175px;
   padding: 0;
   overflow-x: hidden;

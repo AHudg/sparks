@@ -21,12 +21,11 @@
 }
 
 div > .searchEmblem {
-  position: relative;
+  /* position: relative; */
 }
 
 .searchEmblem {
-  position: absolute;
-  right: 0;
+  /* position: absolute; */
   color: var(--ember);
 }
 
