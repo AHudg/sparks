@@ -59,12 +59,12 @@ export default function Hamburger() {
       // initialRender.current = false;
     } else {
       if (!blogStatus) {
-        gsap.to(".ribbonOne", { height: "50vh" });
-        gsap.to(".leftUp", { y: "30vh" });
-        gsap.to(".ribbonTwo", { y: "30vh" });
-        gsap.to(".ribbonThree", { y: "30vh" });
-        gsap.to(".ribbonFour", { y: "30vh" });
-        gsap.to(".ribbonFive", { y: "30vh" });
+        gsap.to(".ribbonOne", { height: "60vh" });
+        gsap.to(".leftUp", { y: "40vh" });
+        gsap.to(".ribbonTwo", { y: "40vh" });
+        gsap.to(".ribbonThree", { y: "40vh" });
+        gsap.to(".ribbonFour", { y: "40vh" });
+        gsap.to(".ribbonFive", { y: "40vh" });
       } else {
         gsap.to(".ribbonOne", { height: "20vh" });
         gsap.to(".leftUp", { y: 0 });
@@ -121,6 +121,9 @@ export default function Hamburger() {
   const navigateSelections = (e) => {
     console.dir(e.target.dataset.tag);
     navigate(`/blog/${e.target.dataset.tag}`);
+    setBlogStatus(false);
+    setAboutStatus(false);
+    setOpen(false);
   };
 
   return (
