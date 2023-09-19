@@ -11,17 +11,13 @@
 
 .loadContainer {
   position: relative;
-  display: block;
   width: 100vw;
   height: 100vh;
-  background-color: var(--dusty);
 }
 
 .loadImage {
   position: absolute;
   width: 70vw;
-  top: 30vh;
-  left: 15vw;
 }
 
 .rotate {
@@ -35,4 +31,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (min-width: 540px) {
+  .loadImage {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loadImage {
+    width: 45vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .loadImage {
+    width: 30vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
 }

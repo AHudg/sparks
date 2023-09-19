@@ -76,10 +76,9 @@ function App() {
   };
 
   return (
-    // <ApolloProvider client={client}>
     <Router>
       <ThemeContext.Provider value={{ theme, handleTheme, open, setOpen }}>
-        {loading === false ? (
+        {loading === !false ? (
           <div>
             {/* TODO pass theme as props to continue using dark mode throughout site */}
             {/* use localStorage for remembering dark mode upon return */}
@@ -113,7 +112,6 @@ function App() {
         )}
       </ThemeContext.Provider>
     </Router>
-    // </ApolloProvider>
   );
 }
 

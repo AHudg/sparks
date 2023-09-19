@@ -207,8 +207,8 @@
 
   .flame {
     width: 300px;
-    right: -10%;
-    bottom: 5%;
+    right: 0%;
+    /* bottom: 5%; */
     opacity: 0.5;
     z-index: 1;
   }

@@ -24,7 +24,8 @@ function About() {
   return (
     <main>
       <section className="aboutSect">
-        <h2>About Us</h2>
+        <h2>Hello mi amor</h2>
+        <p>Sabes que te amooooo.</p>
         <img src={burst} className="burst"></img>
       </section>
 
