@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import { gsap } from "gsap";
-import amber from "../../amberMicroBg.png";
+import amber from "../../images/amberMicroBg.png";
 
 function Post({ title, description, url, postedOn, iterator }) {
   const handleView = function (event) {

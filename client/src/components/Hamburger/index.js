@@ -76,6 +76,7 @@ export default function Hamburger() {
     }
   }, [blogStatus]);
 
+  // Controlling the About buttons
   useEffect(() => {
     if (!blogStatus) {
       setBlogStatus(!blogStatus);
@@ -100,10 +101,12 @@ export default function Hamburger() {
     }
   }, [aboutStatus]);
 
+  // Changes state for hamburger being open
   const handleMenu = () => {
     setOpen(!open);
   };
 
+  // Changes the state to control the About/Blog subsections of the hamburger
   const handleNavClick = function (event) {
     const navClick = event.target.innerHTML;
 
@@ -118,6 +121,7 @@ export default function Hamburger() {
     }
   };
 
+  // Routes the user to the selected path chosen from the blog/about drop down menus
   const navigateSelections = (e) => {
     console.dir(e.target.dataset.tag);
     navigate(`/blog/${e.target.dataset.tag}`);
@@ -127,6 +131,7 @@ export default function Hamburger() {
   };
 
   return (
+    // hamburger icon on top left header
     <div className="col-8">
       <div className="hamBorder" onClick={handleMenu}>
         <span className="hamTop"></span>
@@ -134,6 +139,7 @@ export default function Hamburger() {
         <span className="hamBottom"></span>
       </div>
 
+      {/* physical hamburger menu */}
       <nav className="menu">
         <div className="ribbonOne">
           <i

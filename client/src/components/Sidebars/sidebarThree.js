@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 import { gsap } from "gsap";
-import Jalene from "../../Jalene.png";
-import Andrew from "../../Andrew.png";
-import Andrew2 from "../../Andrew2.png";
 
 function SidebarThree({ screenWidth, breakpoint }) {
   const [scroll, setScroll] = useState(0);
@@ -37,13 +34,13 @@ function SidebarThree({ screenWidth, breakpoint }) {
         >
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img className="d-block w-100" src={Jalene} alt="First slide" />
+              {/* <img className="d-block w-100" src={Jalene} alt="First slide" /> */}
             </div>
             <div className="carousel-item">
-              <img className="d-block w-100" src={Andrew} alt="Second slide" />
+              {/* <img className="d-block w-100" src={Andrew} alt="Second slide" /> */}
             </div>
             <div className="carousel-item">
-              <img className="d-block w-100" src={Andrew2} alt="Third slide" />
+              {/* <img className="d-block w-100" src={Andrew2} alt="Third slide" /> */}
             </div>
           </div>
           <a

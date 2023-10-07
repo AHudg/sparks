@@ -9,29 +9,10 @@
   --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
-.sidebar {
-  position: relative;
-}
-
-.video {
-  margin: auto;
-  display: block;
-}
-
-.ornament {
-  font-size: 4rem;
-  color: var(--mist);
-  filter: drop-shadow(-4px 4px 0 var(--vermillion));
-  font-weight: bold;
-  position: absolute;
-  bottom: -25px;
-  left: 10px;
-}
-
 /* Sidebar Two styling */
 .sectAbout {
   height: 80vh;
-  /* position: relative; */
+  position: relative;
   overflow: hidden;
   z-index: -99;
 }
@@ -66,7 +47,7 @@
   width: 100vw;
   height: 40vh;
   position: absolute;
-  top: 40vh;
+  bottom: 0vh;
   left: -100vw;
   z-index: -1;
   border-top: solid 5px var(--dusty);
@@ -110,13 +91,7 @@
 }
 
 /* Sidebar Three Styling */
-.sectAbout {
-  height: 80vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.threeRibOne {
+/* .threeRibOne {
   background-color: var(--sandstone);
   width: 50vw;
   height: 40vh;
@@ -149,4 +124,39 @@
 .emphasized {
   font-weight: bold;
   color: var(--mist);
+} */
+
+/* Sidebar One */
+/* .sidebar {
+  position: relative;
+}
+
+.video {
+  margin: auto;
+  display: block;
+}
+
+.ornament {
+  font-size: 4rem;
+  color: var(--mist);
+  filter: drop-shadow(-4px 4px 0 var(--vermillion));
+  font-weight: bold;
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+} */
+
+@media screen and (min-width: 575px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
 }

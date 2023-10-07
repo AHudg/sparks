@@ -8,8 +8,8 @@ import Post from "../components/Post";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALLPOST } from "../utils/queries";
 
-import handFan from "../handFan.png";
-import bgVideo from "../bubbles.mp4";
+import handFan from "../images/handFan.png";
+import bgVideo from "../images/bubbles.mp4";
 
 function Blog() {
   const optionObj = [

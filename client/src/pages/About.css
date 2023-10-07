@@ -9,9 +9,47 @@
   --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
-.aboutSect {
-  height: 500px;
+.aboutNav {
   width: 100vw;
+  line-height: 1;
+}
+
+.aboutNav a {
+  font-size: 12px;
+  color: var(--ember);
+}
+
+.middleRow {
+  border-right: 2px var(--vermillion) solid;
+  border-left: 2px var(--vermillion) solid;
+}
+
+.aboutNav {
+  content: "";
+  background: linear-gradient(var(--dusty), var(--mist));
+  height: 100px;
+  width: 100vw;
+  display: block;
+}
+
+.aboutSect {
+  background-color: var(--mist);
+  padding: 0 20px 0 20px;
+}
+
+.aboutSect h2 {
+  color: var(--aqua);
+}
+
+.aboutSect p {
+  color: var(--teal);
+}
+
+.pageBreak {
+  background-color: var(--teal);
+  width: 100vw;
+  position: relative;
+  left: -20px;
 }
 
 .burst {

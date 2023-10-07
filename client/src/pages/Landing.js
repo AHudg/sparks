@@ -6,8 +6,8 @@ import SidebarOne from "../components/Sidebars/sidebarOne";
 import SidebarTwo from "../components/Sidebars/sidebarTwo";
 import SidebarThree from "../components/Sidebars/sidebarThree";
 
-import flame from "../flame.png";
-import bgVideo from "../bubbles.mp4";
+import flame from "../images/flame.png";
+import bgVideo from "../images/bubbles.mp4";
 
 function Landing({ screenWidth, breakpoint }) {
   // const [scroll, setScroll] = useState(0);
@@ -53,14 +53,14 @@ function Landing({ screenWidth, breakpoint }) {
         screenWidth={screenWidth}
         breakpoint={breakpoint}
       ></SidebarTwo>
-      <SidebarThree
+      {/* <SidebarThree
         screenWidth={screenWidth}
         breakpoint={breakpoint}
       ></SidebarThree>
       <SidebarOne
         screenWidth={screenWidth}
         breakpoint={breakpoint}
-      ></SidebarOne>
+      ></SidebarOne> */}
     </main>
   );
 }

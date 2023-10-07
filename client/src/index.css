@@ -11,6 +11,8 @@
   --accent: "AccountantSignature";
 }
 
+@import-normalize;
+
 @font-face {
   font-family: "AccountantSignature";
   src: url("./AccountantSignature.otf");

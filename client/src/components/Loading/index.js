@@ -1,6 +1,6 @@
 import React from "react";
-import logoWrap from "../../logoWrap.png";
-import logoCircle from "../../logoCircle.png";
+import logoWrap from "../../images/logoWrap.png";
+import logoCircle from "../../images/logoCircle.png";
 import "./index.css";
 
 function Loading() {

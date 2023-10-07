@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
 import { gsap } from "gsap";
-import hatTip from "../../hatTip.png";
-import sitting from "../../sitting.png";
-import upClose from "../../upClose.png";
+import Carousel from "../Carousel";
+import vertOne from "../../images/vertOne.png";
+import vertTwo from "../../images/vertTwo.png";
+import vertThree from "../../images/vertThree.png";
 
 function SidebarTwo({ screenWidth, breakpoint }) {
   const [scroll, setScroll] = useState(0);
@@ -13,9 +14,9 @@ function SidebarTwo({ screenWidth, breakpoint }) {
     setScroll(scrollLocale);
     console.log(scrollLocale);
     if (scrollLocale > 200) {
-      gsap.to(".twoRibOne", { x: "50vw" });
-      gsap.to(".twoRibTwo", { x: "-50vw" });
-      gsap.to(".twoRibThree", { x: "100vw" });
+      gsap.to(".twoRibOne", { x: "50vw", duration: 2 });
+      gsap.to(".twoRibTwo", { x: "-50vw", duration: 2 });
+      gsap.to(".twoRibThree", { x: "100vw", duration: 2 });
     }
   };
 
@@ -30,23 +31,11 @@ function SidebarTwo({ screenWidth, breakpoint }) {
   return (
     <section className="mt-5 sectAbout">
       <div className="twoRibOne">
-        <div
-          id="carouselExampleSlidesOnly"
-          className="carousel slide"
-          data-ride="carousel"
-        >
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img className="d-block w-100" src={hatTip} alt="First slide" />
-            </div>
-            <div className="carousel-item">
-              <img className="d-block w-100" src={sitting} alt="Second slide" />
-            </div>
-            <div className="carousel-item">
-              <img className="d-block w-100" src={upClose} alt="Third slide" />
-            </div>
-          </div>
-        </div>
+        <Carousel
+          firstPhoto={vertOne}
+          secondPhoto={vertTwo}
+          thirdPhoto={vertThree}
+        ></Carousel>
       </div>
 
       <div className="twoRibTwo">
@@ -64,3 +53,58 @@ function SidebarTwo({ screenWidth, breakpoint }) {
 }
 
 export default SidebarTwo;
+
+// import React, { useState, useEffect } from "react";
+// import gsap from "gsap";
+// import "./index.css";
+// import Carousel from "../Carousel";
+// import vertOne from "../../images/vertOne.png";
+// import vertTwo from "../../images/vertTwo.png";
+// import vertThree from "../../images/vertThree.png";
+
+// function SidebarTwo({ screenWidth, breakpoint }) {
+//   const [scroll, setScroll] = useState(0);
+
+//   const handleScroll = () => {
+//     const scrollLocale = window.scrollY;
+//     setScroll(scrollLocale);
+//     console.log(scrollLocale);
+//     if (scrollLocale > 200) {
+//       gsap.to(".twoRibOne", { x: "100%" });
+//       gsap.to(".twoRibTwo", { x: "-100%" });
+//       gsap.to(".twoRibThree", { x: "100%" });
+//     }
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll, { passive: true });
+
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, [scroll]);
+
+//   return (
+//     <section className="mt-5 sectAbout">
+//       <div className="twoRibOne row justify-content-center">
+//         <Carousel
+//           firstPhoto={vertOne}
+//           secondPhoto={vertTwo}
+//           thirdPhoto={vertThree}
+//           classSelector="blah"
+//         ></Carousel>
+//       </div>
+
+//       <div className="twoRibTwo">
+//         <p className="topOrnament">OUR</p>
+//         <p className="bottomOrnament">STORY</p>
+//       </div>
+
+//       <div className="twoRibThree">
+//         {/* <p>Find out why we do what we do.</p> */}
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default SidebarTwo;
