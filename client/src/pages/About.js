@@ -48,7 +48,7 @@ function About(screenWidth) {
     return <div classname="square" style={squareStyle}></div>;
   };
 
-  function startSquares() {
+  function StartSquares() {
     const newSquare = createSquare();
     const animationEl = document.getElementsByClassName("animation");
     console.log(animationEl[0]);
@@ -119,6 +119,7 @@ function About(screenWidth) {
       </section>
 
       <div className="animation row justify-content-around">
+        <StartSquares />
         {/* {colors.map((classes, i) => (
           <div
             className={classes.color + " " + classes.size}
