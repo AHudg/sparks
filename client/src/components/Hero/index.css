@@ -1,12 +1,15 @@
 /* Video Section / Intro Styling */
 .sectHero {
-  z-index: 9;
+  /* z-index: 9; */
+  position: relative;
+  /* height: 100vh;
+  width: 100vw; */
 }
 
 .collage {
-  position: relative;
+  /* position: relative;
   height: 75vh;
-  width: 100vw;
+  width: 100vw; */
 }
 
 .squareOne {
@@ -46,9 +49,8 @@
   line-height: 80%;
   letter-spacing: 0px;
   z-index: 1;
-  position: relative;
+  position: absolute;
   bottom: 1.5rem;
-  right: -10px;
   width: 95vw;
   z-index: 5;
 }
@@ -58,9 +60,9 @@
 }
 
 .flame {
-  position: absolute;
   display: inline;
-  bottom: -20px;
+  position: absolute;
+  bottom: 0rem;
   width: 150px;
   padding: 0;
   overflow-x: hidden;
@@ -90,12 +92,16 @@
   filter: drop-shadow(-3px 3px 4px var(--dropshadow));
 }
 
-.coaBlog {
+.coa {
+  margin: auto;
+}
+
+.coa p {
   color: var(--ember);
   margin-top: 30px;
 }
 
-.buttonBlog {
+.coa a {
   border-radius: 10px;
   border-bottom: 4px solid var(--vermillion);
   border-left: 4px solid var(--vermillion);
@@ -169,8 +175,9 @@
 
 @media screen and (min-width: 992px) {
   .collage {
-    width: 100vw;
-    height: 90vh;
+    /* width: 100vw;
+    height: 90vh; */
+    width: auto;
     right: 5px;
     margin: auto;
   }
@@ -214,21 +221,25 @@
     z-index: 1;
   }
 
-  .coaBlog {
-    width: 325px;
-    font-size: 18px;
-    position: absolute;
-    top: 29%;
-    right: 7.5%;
-    z-index: 2;
+  .coa {
+    margin: 0;
   }
 
-  .buttonBlog {
-    position: absolute;
+  .coa p {
+    width: 325px;
+    font-size: 18px;
+    /* position: absolute;
+    top: 29%;
+    right: 7.5%;
+    z-index: 2; */
+  }
+
+  .coa a {
+    /* position: absolute;
     width: 150px;
     top: 47%;
     right: 15%;
-    z-index: 2;
+    z-index: 2; */
   }
 }
 

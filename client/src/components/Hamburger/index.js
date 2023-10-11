@@ -109,24 +109,18 @@ export default function Hamburger() {
   // Changes the state to control the About/Blog subsections of the hamburger
   const handleNavClick = function (event) {
     const navClick = event.target.innerHTML;
-
     if (navClick === "Blog") {
       event.preventDefault();
       setBlogStatus(!blogStatus);
-    } else if (navClick === "About") {
-      event.preventDefault();
-      setAboutStatus(!aboutStatus);
     } else {
       return;
     }
   };
 
   // Routes the user to the selected path chosen from the blog/about drop down menus
-  const navigateSelections = (e) => {
-    console.dir(e.target.dataset.tag);
-    navigate(`/blog/${e.target.dataset.tag}`);
+  const navigateSelections = (event) => {
+    navigate(`/blog/${event.target.dataset.tag}`);
     setBlogStatus(false);
-    setAboutStatus(false);
     setOpen(false);
   };
 
@@ -142,12 +136,6 @@ export default function Hamburger() {
       {/* physical hamburger menu */}
       <nav className="menu">
         <div className="ribbonOne">
-          <i
-            className={`fa-regular fa-lg fa-${
-              theme === "light" ? "moon" : "sun"
-            } themeButtonMobile`}
-            onClick={handleTheme}
-          ></i>
           <a href="/blog" onClick={handleNavClick} className="menuWord leftUp">
             Blog
           </a>
@@ -214,29 +202,18 @@ export default function Hamburger() {
         <div className="ribbonTwo">
           <a
             href="/about"
-            onClick={handleNavClick}
             className="menuWord rightUp"
+            // onClick={navigateSelections}
           >
             About
           </a>
-          <div className="row Links">
-            <a href="/blog" className="col-12 text-center aboutAref">
-              Importance of Inspiration
-            </a>
-            <a href="/blog" className="col-12 text-center aboutAref">
-              Who We Are
-            </a>
-            <a href="/blog" className="col-12 text-center aboutAref">
-              How We Started
-            </a>
-          </div>
         </div>
 
         <div className="ribbonThree">
           <a
             href="/store"
-            onClick={handleNavClick}
             className="menuWord leftDown"
+            // onClick={navigateSelections}
           >
             Store
           </a>
@@ -245,8 +222,8 @@ export default function Hamburger() {
         <div className="ribbonFour">
           <a
             href="/donate"
-            onClick={handleNavClick}
             className="menuWord rightDown"
+            // onClick={navigateSelections}
           >
             Donate
           </a>
@@ -255,8 +232,8 @@ export default function Hamburger() {
         <div className="ribbonFive">
           <a
             href="/contact"
-            onClick={handleNavClick}
             className="menuWord contact"
+            // onClick={navigateSelections}
           >
             Contact
           </a>

@@ -24,32 +24,49 @@
   border-left: 2px var(--vermillion) solid;
 }
 
-.aboutNav {
-  content: "";
-  background: linear-gradient(var(--dusty), var(--mist));
-  height: 100px;
-  width: 100vw;
-  display: block;
-}
-
 .aboutSect {
-  background-color: var(--mist);
-  padding: 0 20px 0 20px;
+  height: 75vh;
+  overflow-y: scroll;
 }
 
-.aboutSect h2 {
-  color: var(--aqua);
+#importance {
+  background-color: rgba(153, 207, 205, 0.75);
+  border-radius: 10%;
+  padding: 30px 20px;
+  margin: 20px;
+  & h2 {
+    color: var(--aqua);
+  }
+  & p {
+    color: var(--teal);
+  }
 }
 
-.aboutSect p {
-  color: var(--teal);
+#ourStory {
+  background-color: rgba(196, 66, 26, 0.75);
+  border-radius: 10%;
+  padding: 30px 20px;
+  margin: 20px;
+  & h2 {
+    color: var(--dusty);
+  }
+  & p {
+    color: var(--ember);
+  }
 }
 
-.pageBreak {
-  background-color: var(--teal);
-  width: 100vw;
-  position: relative;
-  left: -20px;
+#started {
+  /* background-color: rgba(22, 89, 74, 0.75); */
+  background-color: rgba(18, 144, 142, 0.75);
+  border-radius: 10%;
+  padding: 30px 20px;
+  margin: 20px;
+  & h2 {
+    color: var(--mist);
+  }
+  & p {
+    color: var(--teal);
+  }
 }
 
 .burst {
@@ -61,3 +78,64 @@
   overflow-x: hidden;
   opacity: 50%;
 }
+
+.animation {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  margin: auto;
+}
+
+.square {
+  position: relative;
+  top: 100px;
+  border-radius: 20px;
+}
+
+/* .mist {
+  position: relative;
+  top: 100px;
+  background-color: var(--mist);
+  border-radius: 20%;
+} */
+/* 
+.aqua {
+  position: relative;
+  top: 100px;
+  background-color: var(--aqua);
+  border-radius: 20%;
+}
+
+.teal {
+  position: relative;
+  top: 100px;
+  background-color: var(--teal);
+  border-radius: 20%;
+}
+
+.sandstone {
+  position: relative;
+  top: 100px;
+  background-color: var(--sandstone);
+  border-radius: 20%;
+}
+
+.vermillion {
+  position: relative;
+  top: 100px;
+  background-color: var(--vermillion);
+  border-radius: 20%;
+}
+
+.small {
+  height: 20px;
+  width: 20px;
+}
+
+.large {
+  height: 40px;
+  width: 40px;
+} */

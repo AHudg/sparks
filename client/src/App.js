@@ -54,18 +54,19 @@ function App() {
     }
   }
 
-  const handleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
+  // const handleTheme = () => {
+  //   const newTheme = theme === "light" ? "dark" : "light";
+  //   setTheme(newTheme);
 
-    if (open) {
-      setOpen(!open);
-    }
-  };
+  //   if (open) {
+  //     setOpen(!open);
+  //   }
+  // };
 
   return (
     <Router>
-      <ThemeContext.Provider value={{ theme, handleTheme, open, setOpen }}>
+      <ThemeContext.Provider value={{ open, setOpen }}>
+        {/* <ThemeContext.Provider value={{ theme, handleTheme, open, setOpen }}> */}
         {loading === false ? (
           <div>
             {/* TODO pass theme as props to continue using dark mode throughout site */}
@@ -80,16 +81,20 @@ function App() {
                   <Landing screenWidth={screenWidth} breakpoint={breakpoint} />
                 }
               />
-              <Route path="/about" element={<About />} />
+              <Route
+                screenWidth={screenWidth}
+                path="/about"
+                element={<About />}
+              />
               {/* This is for the desktop version flame selector general page */}
-              {/* <Route path="/blog" element={<Blog />} /> */}
+              <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:tag" element={<Blog />} />
               <Route path="/donate" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<h1>Oops! No content here!</h1>} />
             </Routes>
 
-            <footer className="row text-center">
+            <footer className="row justify-content-center text-center">
               <p className="footer col-12">© 2023 Kindling by J. </p>
               <Terms />
               <Privacy />

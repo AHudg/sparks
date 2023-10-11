@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Landing.css";
 
 import Hero from "../components/Hero";
@@ -10,25 +10,6 @@ import flame from "../images/flame.png";
 import bgVideo from "../images/bubbles.mp4";
 
 function Landing({ screenWidth, breakpoint }) {
-  // const [scroll, setScroll] = useState(0);
-
-  // const handleScroll = () => {
-  //   const scrollLocale = window.scrollY;
-  //   setScroll(scrollLocale);
-  //   console.log(scrollLocale);
-  //   if (scrollLocale > 400) {
-  //     gsap.to("twoRibOne", { x: "100px" });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [scroll]);
-
   return (
     <main>
       <Hero

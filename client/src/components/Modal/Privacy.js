@@ -14,10 +14,10 @@ export default function Privacy() {
   const [scrollableModal, setScrollableModal] = useState(false);
 
   return (
-    <div className="row">
+    <div className="col-6">
       <MDBBtn
         onClick={() => setScrollableModal(!scrollableModal)}
-        className="footerBtn col-6"
+        className="footerBtn"
       >
         Privacy Policy
       </MDBBtn>

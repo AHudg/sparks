@@ -1,24 +1,65 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import ReactDOM from "react-dom";
 import burst from "../images/burst.png";
 import "./About.css";
 import { gsap } from "gsap";
 
-function About() {
-  const [scrollInfo, setScrollInfo] = useState(0);
+function About(screenWidth) {
+  // const [scrollInfo, setScrollInfo] = useState(0);
 
-  const handleScroll = () => {
-    const location = window.scrollY;
-    setScrollInfo(location);
+  // const handleScroll = () => {
+  //   const location = window.scrollY;
+  //   setScrollInfo(location);
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   gsap.to(".burst", { rotate: scrollInfo / 5 });
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [scrollInfo]);
+
+  // gsap.to(".mist", { y: "100px" });
+
+  function randomSelect(max) {
+    var ranNum = Math.floor(Math.random() * max);
+    return ranNum;
+  }
+
+  const colors = [
+    "--mist: rgb(153, 207, 205);",
+    "--aqua: rgb(18, 144, 142);",
+    "--teal: rgb(22, 89, 74);",
+    "--sandstone: rgb(249, 143, 69);",
+    "--vermillion: rgb(196, 66, 26);",
+  ];
+  const sizes = ["20px", "40px", "60px"];
+
+  const squareStyle = {
+    backgroundColor: colors[randomSelect(colors.length)],
+    height: sizes[randomSelect(sizes.length)],
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    gsap.to(".burst", { rotate: scrollInfo / 5 });
+  squareStyle.width = squareStyle.height;
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrollInfo]);
+  const createSquare = () => {
+    return <div classname="square" style={squareStyle}></div>;
+  };
+
+  function startSquares() {
+    const newSquare = createSquare();
+    const animationEl = document.getElementsByClassName("animation");
+    console.log(animationEl[0]);
+    ReactDOM.render(newSquare, animationEl[0]);
+  }
+
+  // let squareGenerator = setInterval(() => {
+  //   if (!document.hidden) {
+  //     startSquares();
+  //   }
+  // }, 1500);
 
   return (
     <main>
@@ -37,8 +78,8 @@ function About() {
       </div>
 
       <section className="aboutSect">
-        <article>
-          <h2 id="importance">Importance of Inspiration</h2>
+        <article id="importance">
+          <h2>Importance of Inspiration</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -49,13 +90,9 @@ function About() {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </article>
-        <article className="pageBreak">
-          <img></img>
-          <img></img>
-          <img></img>
-        </article>
-        <article>
-          <h2 id="ourStory">Who We Are</h2>
+
+        <article id="ourStory">
+          <h2>Who We Are</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -66,8 +103,9 @@ function About() {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </article>
-        <article>
-          <h2 id="started">How We Started</h2>
+
+        <article id="started">
+          <h2>How We Started</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -79,6 +117,16 @@ function About() {
           </p>
         </article>
       </section>
+
+      <div className="animation row justify-content-around">
+        {/* {colors.map((classes, i) => (
+          <div
+            className={classes.color + " " + classes.size}
+            key={`color${i}`}
+            data-tag={`color${i}`}
+          ></div>
+        ))} */}
+      </div>
     </main>
   );
 }

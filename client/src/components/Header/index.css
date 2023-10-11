@@ -1,6 +1,5 @@
 /* Header.css */
 :root {
-  font-size: 16px;
   --dusty: rgb(254, 222, 197);
   --sandstone: rgb(251, 171, 114);
   --vermillion: rgb(196, 66, 26);
@@ -24,6 +23,7 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 999;
+  background-color: var(--dusty);
 }
 
 /* TODO css for desktop navigation */
@@ -97,7 +97,8 @@ h1 {
   position: absolute;
   left: 0;
   top: 0;
-  overflow-y: hidden;
+  overflow: hidden;
+  display: none;
 }
 
 .ribbonOne {

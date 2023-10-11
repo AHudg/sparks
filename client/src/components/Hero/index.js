@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./index.css";
 
 function Hero({
@@ -14,7 +14,7 @@ function Hero({
   return (
     <section className={screenWidth > 540 && "container"}>
       <div className="row sectHero">
-        <div className="col-12 col-lg-6 collage">
+        <div className="col-12 col-lg-5 collage">
           {screenWidth >= 540 && (
             <div>
               <div className="squareOne"></div>
@@ -29,14 +29,14 @@ function Hero({
           ) : (
             <img src={src} className="mediaHero"></img>
           )}
-          <div className={orientation}>
+          {/* <div className={orientation}>
             <p>{firstLine}</p>
             <p>{secondLine}</p>
           </div>
-          <img src={accent} className={accentClass} />
+          <img src={accent} className={accentClass} /> */}
         </div>
-        <div className="col-12 col-lg-6 text-center row justify-content-center">
-          <p className="col-12 coaBlog">
+        <div className="col-12 col-lg-5 row text-center justify-content-center coa">
+          <p className="col-12">
             Cheering you on for your next DIY, we illuminate your interest and
             encourage you to get out and go do! Here is your spark, now ignite
             your inspiration.

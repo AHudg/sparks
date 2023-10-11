@@ -1,16 +1,12 @@
 import React, { useContext } from "react";
 import "./index.css";
 import Hamburger from "../Hamburger";
-import ThemeContext from "../ThemeContext";
 
 export default function Header({ screenWidth, breakpoint }) {
-  const { theme } = useContext(ThemeContext);
-  const { handleTheme } = useContext(ThemeContext);
-
   return (
-    <header className={`sticky ${theme === "light" ? "light" : "dark"}`}>
+    <header className="sticky">
       <div className="row justify-content-between align-items-end">
-        <a href="/" className="col-4">
+        <a href="/sparks" className="col-4">
           <h1>Kindling</h1>
         </a>
 
@@ -40,13 +36,6 @@ export default function Header({ screenWidth, breakpoint }) {
                 </li>
               </ul>
             </nav>
-
-            <i
-              className={`fa-regular fa-lg fa-${
-                theme === "light" ? "moon" : "sun"
-              } themeButton`}
-              onClick={handleTheme}
-            ></i>
           </div>
         )}
       </div>

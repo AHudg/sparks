@@ -65,10 +65,12 @@ ul {
 }
 
 .footerBtn {
-  background-color: var(--dusty);
-  border: none;
+  background-color: transparent;
+  border: transparent;
   color: black;
   font-size: 12px;
+  padding-bottom: 20px;
+  margin: auto;
 }
 
 @media screen and (min-width: 575px) {

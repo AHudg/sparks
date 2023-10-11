@@ -14,10 +14,10 @@ export default function Terms() {
   const [scrollableModal, setScrollableModal] = useState(false);
 
   return (
-    <div className="row">
+    <div className="col-6">
       <MDBBtn
         onClick={() => setScrollableModal(!scrollableModal)}
-        className="footerBtn col-6"
+        className="footerBtn"
       >
         Terms of Service
       </MDBBtn>
