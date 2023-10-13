@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const PORT = process.env.REACT_APP_PORT || 3001;
 
 const __dirname = fileURLToPath(import.meta.url);
-console.log(__dirname);
+console.log(import.meta.url + "/..");
 
 // Create a new instance of the Apollo server
 const server = new ApolloServer({
@@ -19,6 +19,7 @@ const server = new ApolloServer({
   cache: "bounded",
 });
 
+// Initialize an instance of express called app;
 const app = express();
 
 // boilerplate: URL-encoded data will be parsed w/ qs lib allowing nested objs from query strings
