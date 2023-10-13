@@ -32,9 +32,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // wildcard GET route- if a location is requested that doesn't have explicit route defined, respond w/ the production-ready REACT code
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../../client/public/", "index.html"));
-// });
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../client/public/", "index.html"));
+});
 
 async function startApolloServer() {
   await server.start();
