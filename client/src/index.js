@@ -15,11 +15,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: createHttpLink({
-    // Construct our main GraphQL API endpoint
-    // uri: "http://localhost:3001/graphql",
-    uri: "https://sparksfrontend.onrender.com/",
-  }),
+  // link: createHttpLink({
+  // Construct our main GraphQL API endpoint
+  // uri: "http://localhost:3001/graphql",
+  link: "https://sparksfrontend.onrender.com/",
+  // }),
   cache: new InMemoryCache(),
 });
 

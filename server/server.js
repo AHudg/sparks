@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const PORT = process.env.REACT_APP_PORT || 3001;
 
 const __dirname = fileURLToPath(import.meta.url);
-console.log(import.meta.url + "/..");
+console.log(__dirname);
 
 // Create a new instance of the Apollo server
 const server = new ApolloServer({
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === "production") {
 
 // wildcard GET route- if a location is requested that doesn't have explicit route defined, respond w/ the production-ready REACT code
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "../../client/build/index.html"));
 });
 
 async function startApolloServer() {

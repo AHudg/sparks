@@ -11,11 +11,6 @@ import Contact from "./components/Contact";
 import Terms from "./components/Modal/Terms";
 import Privacy from "./components/Modal/Privacy";
 
-// // Construct our main GraphQL API endpoint
-// const httpLink = createHttpLink({
-//   uri: "/graphql",
-// });
-
 function App() {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(
@@ -54,19 +49,9 @@ function App() {
     }
   }
 
-  // const handleTheme = () => {
-  //   const newTheme = theme === "light" ? "dark" : "light";
-  //   setTheme(newTheme);
-
-  //   if (open) {
-  //     setOpen(!open);
-  //   }
-  // };
-
   return (
     <Router>
       <ThemeContext.Provider value={{ open, setOpen }}>
-        {/* <ThemeContext.Provider value={{ theme, handleTheme, open, setOpen }}> */}
         {loading === false ? (
           <div>
             {/* TODO pass theme as props to continue using dark mode throughout site */}
