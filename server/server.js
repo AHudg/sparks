@@ -31,7 +31,8 @@ app.use(express.json());
 // TODO: we check if Node environment is in production, if so express is told to serve any files in React app's buiild directory in client folder
 if (process.env.NODE_ENV === "production") {
   // app.use(express.static(path.join(__dirname, "../../client/build")));
-  app.use(express.static(path.join(__dirname, "../../client/public")));
+  // app.use(express.static(path.join(__dirname, "../../client/public")));
+  app.use(express.static("public"));
 }
 
 // wildcard GET route- if a location is requested that doesn't have explicit route defined, respond w/ the production-ready REACT code
