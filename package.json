@@ -2,7 +2,7 @@
   "name": "sparks",
   "version": "0.1.0",
   "private": true,
-  "main": "server/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "client": "cd client && npm start",
